@@ -11,14 +11,15 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-let flock = new Flock(scene, 100);
+let flock = new Flock(scene, 10);
 
 const clock = new THREE.Clock();
-clock.start();
+clock.start();	
+
 function animate() {
 	let delta = clock.getDelta();
+	flock.update();
 
-	flock.update(delta);
 	renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );

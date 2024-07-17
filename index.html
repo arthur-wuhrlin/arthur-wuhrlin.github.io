@@ -9,7 +9,12 @@
   <body>
 
     <canvas id="bg"></canvas>
-
+    <input type="range" min="0" max="100" value="0" class="slider" id="cohesion">
+    <p>Value: <span id="cohesion-value"></span></p>
+    <input type="range" min="0" max="100" value="0" class="slider" id="alignment">
+    <p>Value: <span id="alignment-value"></span></p>
+    <input type="range" min="0" max="100" value="0" class="slider" id="repulsion">
+    <p>Value: <span id="repulsion-value"></span></p>
     <div id="app"></div>
     <script type="module" src="/js/main.js"></script>
   </body>
