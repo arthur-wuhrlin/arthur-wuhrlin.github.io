@@ -4,7 +4,7 @@ const UP = new THREE.Vector3(0, 0, 1);
 const SIZE = new THREE.Vector2(25.0, 25.0);
 
 const MAX_VELOCITY = 2;
-const DETECTION_RADIUS = 100;
+const DETECTION_RADIUS = 75;
 const REPULSION_RADIUS = 50;
 
 var cohesionSlider = document.getElementById("cohesion");
@@ -41,7 +41,7 @@ export class Boid {
     this.acceleration = new THREE.Vector2( 0, 0 );
 
     // update gfx direction and set velocity
-    this.direction = new THREE.Vector2( 0, 1 ); // by default the img is pointing (0 , -1)
+    this.direction = new THREE.Vector2( 0, -1 ); // by default the img is pointing (0 , -1)
     this.setDirection(this.velocity);
 
     /*console.log(this.position);
@@ -168,14 +168,9 @@ export class Boid {
   }
 
   setDirection(direction) {
-    let angle = this.direction.angleTo(direction);
-    var orientation = direction.x * this.velocity.y - direction.y * this.velocity.x;
-    if(orientation > 0) angle = 2*Math.PI - angle;
+    let angle = direction.angle() + Math.PI / 2;
 
-    this.direction = direction.clone();
-    this.direction.normalize();
-
-    this.mesh.rotateOnAxis(UP, angle);
+    this.mesh.rotation.set(0, 0, angle);
   }
 
   setMesh(scene) {
