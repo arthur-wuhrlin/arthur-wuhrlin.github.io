@@ -139,10 +139,11 @@ export class Boid {
       this.acceleration.add(alignment);
     }
 
+    this.acceleration.normalize();
+
     // Update velocity
     this.velocity.add(this.acceleration);
     this.velocity.normalize().multiplyScalar(MAX_VELOCITY);
-    //this.velocity.normalize().multiplyScalar(MAX_VELOCITY);
 
     // Update position
     this.position.add(this.velocity);
@@ -167,7 +168,10 @@ export class Boid {
   }
 
   setDirection(direction) {
-    let angle = -this.direction.angleTo(direction);
+    let angle = this.direction.angleTo(direction);
+    var orientation = direction.x * this.velocity.y - direction.y * this.velocity.x;
+    if(orientation > 0) angle = 2*Math.PI - angle;
+
     this.direction = direction.clone();
     this.direction.normalize();
 
