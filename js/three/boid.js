@@ -1,38 +1,21 @@
 import * as THREE from "three"
+import size from "./main";
 
 const UP = new THREE.Vector3(0, 0, 1);
 const SIZE = new THREE.Vector2(25.0, 25.0);
 
-const MAX_VELOCITY = 2;
+const MAX_VELOCITY = 1.0;
+const MAX_ACCELERATION = 0.05 * MAX_VELOCITY;
+
 const DETECTION_RADIUS = 75;
-const REPULSION_RADIUS = 50;
-
-var cohesionSlider = document.getElementById("cohesion");
-var alignmentSlider = document.getElementById("alignment");
-var repulsionSlider = document.getElementById("repulsion");
-
-var cohesionOutput = document.getElementById("cohesion-value");
-var alignmentOutput = document.getElementById("alignment-value");
-var repulsionOutput = document.getElementById("repulsion-value");
-
-cohesionSlider.oninput = function() {
-  cohesionOutput.innerHTML = this.value;
-}
-
-alignmentSlider.oninput = function() {
-  alignmentOutput.innerHTML = this.value;
-}
-
-repulsionSlider.oninput = function() {
-  repulsionOutput.innerHTML = this.value;
-}
+const REPULSION_RADIUS = 25;
 
 export class Boid {
   constructor(
     scene, 
-    position = new THREE.Vector2(Math.random() * window.innerWidth - window.innerWidth / 2, Math.random() * window.innerHeight - window.innerHeight / 2),
+    position = new THREE.Vector2(Math.random() * size.width - size.width / 2, Math.random() * size.height - size.height / 2),
     direction = new THREE.Vector2(Math.random(), Math.random()).normalize(), 
-    initialSpeed = 1.0) {
+    initialSpeed = MAX_VELOCITY) {
 
     this.setMesh(scene);
 
@@ -43,10 +26,6 @@ export class Boid {
     // update gfx direction and set velocity
     this.direction = new THREE.Vector2( 0, -1 ); // by default the img is pointing (0 , -1)
     this.setDirection(this.velocity);
-
-    /*console.log(this.position);
-    console.log(this.velocity);
-    console.log(this.acceleration);*/
   }
 
   align(neighbors) {
@@ -71,7 +50,8 @@ export class Boid {
 
   cohesion(neighbors) {
     let desiredPos = new THREE.Vector2();
-    let count = 0;
+    desiredPos.add(this.position);
+    let count = 1;
 
     neighbors.forEach(boid => {
       let d = this.position.distanceToSquared(boid.position);
@@ -123,23 +103,16 @@ export class Boid {
 
   update(neighbors) {
     // Compute steering direction
-    let repulsion = this.repulsion(neighbors).multiplyScalar(repulsionSlider.value / 100);
-    console.log("Repulsion : ", repulsion);
-    let alignment = this.align(neighbors).multiplyScalar(alignmentSlider.value / 100);
-    //console.log("Alignment : ", alignment);
-    let cohesion = this.cohesion(neighbors).multiplyScalar(cohesionSlider.value / 100);
-    //console.log("Cohesion : ", cohesion);
+    let repulsion = this.repulsion(neighbors).multiplyScalar(0.65);
+    let alignment = this.align(neighbors).multiplyScalar(0.15);
+    let cohesion = this.cohesion(neighbors).multiplyScalar(0.15);
 
+    // Update acceleration
     this.acceleration = repulsion;
-    if(this.acceleration.length() < 1) {
-      this.acceleration.add(cohesion);
-    }
+    this.acceleration.add(alignment);
+    this.acceleration.add(cohesion);
 
-    if(this.acceleration.length() < 1) {
-      this.acceleration.add(alignment);
-    }
-
-    this.acceleration.normalize();
+    this.acceleration.normalize().multiplyScalar(MAX_ACCELERATION);
 
     // Update velocity
     this.velocity.add(this.acceleration);
@@ -149,16 +122,16 @@ export class Boid {
     this.position.add(this.velocity);
 
     // clamp in view
-    if(this.position.x < -innerWidth / 2) {
-      this.position.setX(innerWidth / 2);
-    } else if(this.position.x > innerWidth / 2) {
-      this.position.setX(-innerWidth / 2);
+    if(this.position.x < -size.width / 2) {
+      this.position.setX(size.width / 2);
+    } else if(this.position.x > size.width / 2) {
+      this.position.setX(-size.width / 2);
     } 
     
-    if(this.position.y < -innerHeight / 2) {
-      this.position.setY(innerHeight / 2);
-    } else if(this.position.y > innerHeight / 2) {
-      this.position.setY(-innerHeight / 2);
+    if(this.position.y < -size.height / 2) {
+      this.position.setY(size.height / 2);
+    } else if(this.position.y > size.height / 2) {
+      this.position.setY(-size.height / 2);
     }
 
     this.setDirection(this.velocity);
