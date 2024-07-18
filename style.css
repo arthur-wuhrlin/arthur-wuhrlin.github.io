@@ -6,7 +6,6 @@ html, body {
   background: var(--background-color);
   overflow: hidden;
   transition: background 0.3s, color 0.3s;
-  font-family: 'Roboto', sans-serif;
 }
 
 #c {
@@ -17,22 +16,75 @@ html, body {
   z-index: -1;
 }
 
-#theme-toggle {
+/* Header Bar */
+
+.header-bar {
+  width: 100%;
   position: absolute;
+  display: flex;
+  gap: 10px;
+}
+
+.controls {
   top: 20px;
   right: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.social-icons {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  background: none;
+  gap: 20px;
+  padding: 20px;
+}
+
+.icon-link {
+  display: inline-block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.icon {
+  width: 40px; /* Default size */
+  height: 40px; /* Maintain aspect ratio */
+  display: block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.icon-link:hover .icon {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  opacity: 0.8; /* Slightly fade the icon on hover */
+}
+
+@media (max-width: 600px) {
+  .icon {
+      width: 30px; /* Smaller size for small screens */
+      height: 30px;
+  }
+}
+
+body.dark .icon {
+  filter: invert(1) hue-rotate(180deg) brightness(0.8);
+}
+
+/* End of Header Bar */
+
+#theme-toggle, #language-toggle {
   padding: 10px 20px;
   background: var(--button-background);
   color: var(--button-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1;
   transition: background 0.3s, color 0.3s;
 }
 
 main {
   position: absolute;
+  width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -43,12 +95,14 @@ main {
 }
 
 header h1 {
-  font-size: 2.5em;
+  font-weight: lighter;
+  font-size: 5vw;
   margin: 0;
 }
 
 header h2 {
-  font-size: 1.2em;
+  font-weight: lighter;
+  font-size: 3vw;
   margin: 10px 0 20px 0;
 }
 
@@ -70,16 +124,47 @@ body.dark {
   --background-color: rgb(30, 30, 30);
   --text-color: white;
   --main-background: rgba(0, 0, 0, 0.7);
+  --button-color: white;
 }
 
 body.light {
   --background-color: white;
   --text-color: rgb(30, 30, 30);
   --main-background: rgba(0, 0, 0, 0.7);
+  --button-color: rgb(30, 30, 30);
 }
 
 .indie-flower-regular {
   font-family: "Indie Flower", cursive;
   font-weight: 300;
   font-style: oblique;
+  font-size: 15vw;
+}
+
+.text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:initial;
+  font-style: normal;
+}
+
+.eb-garamond {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.text-title-name {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10vw;
+}
+
+.text-title {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 6vw;
 }

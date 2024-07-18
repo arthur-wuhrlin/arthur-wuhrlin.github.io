@@ -23,7 +23,4 @@ themeToggleBtn.addEventListener('click', () => {
 
     // Update the button text based on the new theme
     themeToggleBtn.textContent = currentTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-
-    // Update three js background color
-    //updateBackgroundColor();
 });
