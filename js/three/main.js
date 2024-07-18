@@ -31,15 +31,6 @@ addEventListener("resize", onWindowResize, false);
 // Scene
 const scene = new THREE.Scene();
 
-/*export function updateBackgroundColor() {
-  var root = document.querySelector('body');
-  var rootStyles = getComputedStyle(root);
-  var color = rootStyles.getPropertyValue('--background-color');
-  console.log(color);
-
-  scene.background = new THREE.Color(color);
-}*/
-
 // Camera
 const camera = new THREE.OrthographicCamera({
   near: near, 

@@ -7,7 +7,7 @@ const SIZE = new THREE.Vector2(25.0, 25.0);
 const MAX_VELOCITY = 1.0;
 const MAX_ACCELERATION = 0.05 * MAX_VELOCITY;
 
-const DETECTION_RADIUS = 75;
+export const DETECTION_RADIUS = 75;
 const REPULSION_RADIUS = 25;
 
 export class Boid {
@@ -169,7 +169,9 @@ export class Boid {
     geometry.setIndex(indices);
 
     // Create a material
-    const material = new THREE.MeshBasicMaterial({ color: 0xff00ff, side: THREE.DoubleSide });
+    const rd = Math.random() * 0.8 + 0.1; // clamp to 0.1 - 0.9
+    let col = new THREE.Color(rd, rd, rd);
+    const material = new THREE.MeshBasicMaterial({ color: col, side: THREE.DoubleSide });
 
     // Create the mesh  
     this.mesh = new THREE.Mesh(geometry, material);
