@@ -74,12 +74,11 @@ body.dark .icon {
 
 #theme-toggle, #language-toggle {
   padding: 10px 20px;
-  background: var(--button-background);
+  background: transparent;
   color: var(--button-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
 }
 
 main {
