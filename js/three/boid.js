@@ -122,16 +122,17 @@ export class Boid {
     this.position.add(this.velocity);
 
     // clamp in view
-    if(this.position.x < -size.width / 2) {
-      this.position.setX(size.width / 2);
-    } else if(this.position.x > size.width / 2) {
-      this.position.setX(-size.width / 2);
+    const limit = new THREE.Vector2((size.width + SIZE.x) / 2, (size.height + SIZE.y) / 2);
+    if(this.position.x < -limit.x) {
+      this.position.setX(limit.x);
+    } else if(this.position.x > limit.x) {
+      this.position.setX(-limit.x);
     } 
     
-    if(this.position.y < -size.height / 2) {
-      this.position.setY(size.height / 2);
-    } else if(this.position.y > size.height / 2) {
-      this.position.setY(-size.height / 2);
+    if(this.position.y < -limit.y) {
+      this.position.setY(limit.y);
+    } else if(this.position.y > limit.y) {
+      this.position.setY(-limit.y);
     }
 
     this.setDirection(this.velocity);
