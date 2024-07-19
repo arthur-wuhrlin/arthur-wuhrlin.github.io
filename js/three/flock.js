@@ -1,7 +1,5 @@
 import * as THREE from "three"
-import { Boid } from "./boid";
-
-import { DETECTION_RADIUS } from "./boid";
+import { Boid, DETECTION_RADIUS } from "./boid.js";
 
 export class Flock {
   constructor(
