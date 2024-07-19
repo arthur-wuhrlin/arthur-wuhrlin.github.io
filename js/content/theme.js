@@ -1,8 +1,3 @@
-//import { updateBackgroundColor } from "../three/main";
-
-// Simple obfuscation for the email address
-document.getElementById('email').innerHTML = '<a href="mailto:arthur.wuhrlin[at]telecom-paris.fr">arthur.wuhrlin[at]telecom-paris.fr</a>'.replace('[at]', '@');
-
 // Theme toggle functionality
 const themeToggleBtn = document.getElementById('theme-toggle');
 const body = document.body;

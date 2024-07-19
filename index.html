@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Arthur Wuhrlin - Portfolio</title>
     <link rel="stylesheet" href="./style.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.138.0/build/three.module.js"
+            }
+        }
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,12 +33,12 @@
             <a href="https://github.com/JudasBricot" target="_blank" class="icon-link">
                 <img src="img\github_logo.svg" alt="GitHub" class="icon">
             </a>
-            <a href="mailto:arthur.wuhrlin@nus.edu.sg" target="_blank" class="icon-link">
+            <a href="mailto:arthur.wuhrlin@nus.edu.sg" target="_blank" id="email" class="icon-link">
                 <img src="img\email_logo.svg" alt="Mail" class="icon">
             </a>
         </div>
         <div class="controls">
-            <button id="theme-toggle">Toggle Theme</button>
+            <button id="theme-toggle">Switch to Light Mode</button>
             <button id="language-toggle">EN</button>
         </div> 
     </div> 
