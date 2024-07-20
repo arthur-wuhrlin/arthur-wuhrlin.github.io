@@ -97,6 +97,7 @@ button, li {
 }
 
 .content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -162,7 +163,7 @@ body.light {
   font-family: "Shadows Into Light", cursive;
   font-weight: 200;
   font-style: normal;
-  font-size: 10vw;
+  font-size: 8vw;
   display: inline-block
 }
 
@@ -170,7 +171,7 @@ body.light {
   font-family: "Shadows Into Light", cursive;
   font-weight: 200;
   font-style: normal;
-  font-size: 10vw;
+  font-size: 8vw;
   display: inline-block
 }
 
@@ -178,7 +179,7 @@ body.light {
   font-family: "Shadows Into Light", cursive;
   font-weight: 200;
   font-style: normal;
-  font-size: 6vw;
+  font-size: 5vw;
 }
 
 .container-col {
