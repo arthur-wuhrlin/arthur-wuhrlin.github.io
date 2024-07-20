@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import size from "./main.js";
+import size from "./boidSim.js";
 
 const UP = new THREE.Vector3(0, 0, 1);
 const SIZE = new THREE.Vector2(25.0, 25.0);

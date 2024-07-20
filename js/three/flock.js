@@ -7,7 +7,6 @@ export class Flock {
     boidNumber) {
     this.boidArray = [];
     this.scene = scene;
-    this.lines = [];
     for (let index = 0; index < boidNumber; index++) {
       this.boidArray.push(new Boid(scene));
     }
@@ -19,7 +18,6 @@ export class Flock {
       this.boidArray.forEach(candidate => {
         let dir = new THREE.Vector2();
         dir.subVectors(candidate.position, boid.position);
-
         if(candidate != boid && boid.position.distanceToSquared(candidate.position) < DETECTION_RADIUS * DETECTION_RADIUS && Math.abs(boid.velocity.angleTo(dir)) < 3 * Math.PI / 4)
         {
           neighbors.push(candidate);
