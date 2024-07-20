@@ -33,6 +33,13 @@ html, body {
   justify-content: right;
 }
 
+.controls > * {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-size: calc(0.7vw + 8px);
+  font-style: normal;
+}
+
 .social-icons {
   width: 100%;
   display: flex;
@@ -105,6 +112,8 @@ header h2 {
   margin: 10px 0 20px 0;
 }
 
+
+
 .intro, .contact {
   margin: 20px 0;
 }
@@ -143,14 +152,7 @@ body.light {
 .text {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight:initial;
-  font-style: normal;
-}
-
-.eb-garamond {
-  font-family: "EB Garamond", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
+  font-size: 3vw;
   font-style: normal;
 }
 
@@ -159,6 +161,15 @@ body.light {
   font-weight: 200;
   font-style: normal;
   font-size: 10vw;
+  display: inline-block
+}
+
+.text-title-name-fr {
+  font-family: "Shadows Into Light", cursive;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10vw;
+  display: inline-block
 }
 
 .text-title {

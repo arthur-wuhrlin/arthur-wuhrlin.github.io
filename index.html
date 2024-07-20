@@ -1,99 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.138.0/build/three.module.js"
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.138.0/build/three.module.js"
+                }
             }
-        }
-    </script>
+        </script>
         <script type="module" src="./js/three/boidSim.js"></script>
-    <script type="module" src="./js/content/theme.js"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script type="module" src="./js/content/theme.js"></script>
+        <script type="module" src="./js/content/language.js"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
         <title>Arthur Wuhrlin - Portfolio</title>
         <link rel="icon" href="./img/favicon.jpg">
 
         <link rel="stylesheet" href="./style.css">
     </head>
-<body>
-    <div class="header-bar">
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/arthur-wuhrlin" target="_blank" class="icon-link">
-                <img src="img\linkedin_logo.svg" alt="LinkedIn" class="icon">
-            </a>
-            <a href="https://github.com/JudasBricot" target="_blank" class="icon-link">
-                <img src="img\github_logo.svg" alt="GitHub" class="icon">
-            </a>
-            <a href="mailto:arthur.wuhrlin@nus.edu.sg" target="_blank" id="email" class="icon-link">
-                <img src="img\email_logo.svg" alt="Mail" class="icon">
-            </a>
-        </div>
-        <div class="controls">
-            <button id="theme-toggle" class="eb-garamond">Switch to Light Mode</button>
-            <button id="language-toggle" class="eb-garamond">EN</button>
+    <body>
+        <div class="header-bar">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/arthur-wuhrlin" target="_blank" class="icon-link">
+                    <img src="img\linkedin_logo.svg" alt="LinkedIn" class="icon">
+                </a>
+                <a href="https://github.com/JudasBricot" target="_blank" class="icon-link">
+                    <img src="img\github_logo.svg" alt="GitHub" class="icon">
+                </a>
+                <a href="mailto:arthur.wuhrlin@nus.edu.sg" target="_blank" id="email" class="icon-link">
+                    <img src="img\email_logo.svg" alt="Mail" class="icon">
+                </a>
+            </div>
+            <div class="controls">
+                <button id="theme-toggle" data-translate="theme">Light Mode</button>
+                <button id="language-toggle">FR</button>
+            </div> 
         </div> 
-    </div> 
-    <main>
-        <header>
-            <h1 class="text-title" data-translate="title">Bonjour, je suis <span class="text-title-name">Arthur Wuhrlin</span></h1>
-            <h2 class="text" data-translate="subtitle">Et voici mon Portfolio</h2>
-        </header>
-        <section class="text" class="intro" data-translate="intro">
-            <p>Passionné par les <strong>computer graphics</strong> et plus particulièrement par les technologies de rendu comme le <strong>Raytracing</strong> et l'éclairage.</p>
-        </section>
-        <section class="contact">
-            <p class="eb-garamond"><a href="path/to/CV.pdf" target="_blank" data-translate="cv">Mon CV</a></p>
-        </section>
-    </main>
-    <canvas id="c"></canvas>
-    <script>
-                // Language toggle functionality
-                const languageToggleBtn = document.getElementById('language-toggle');
-        const translations = {
-            en: {
-                title: "Hi, I'm <span class='text-title-name'>Arthur Wuhrlin</span>",
-                subtitle: "Computer Graphics Master Student",
-                intro: "Passionate about <strong>computer graphics</strong>, especially rendering technologies such as <strong>Raytracing</strong> and lighting.",
-                cv: "My CV"
-            },
-            fr: {
-                title: "Bonjour, je suis <span class='text-title-name'>Arthur Wuhrlin</span>",
-                subtitle: "Étudiant de Master en Informatique Graphique",
-                intro: "Passionné par les <strong>computer graphics</strong> et plus particulièrement par les technologies de rendu comme le <strong>Raytracing</strong> et l'éclairage.",
-                cv: "Mon CV"
-            }
-        };
-
-        // Load language preference from localStorage
-        const savedLanguage = localStorage.getItem('language') || 'fr';
-        setLanguage(savedLanguage);
-
-        languageToggleBtn.addEventListener('click', () => {
-            const currentLanguage = localStorage.getItem('language') === 'en' ? 'fr' : 'en';
-            setLanguage(currentLanguage);
-            localStorage.setItem('language', currentLanguage);
-        });
-
-        function setLanguage(language) {
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                el.innerHTML = translations[language][key];
-            });
-            languageToggleBtn.textContent = language.toUpperCase();
-        }
-    </script>
-    </script>
-</body>
+        <main>
+            <header>
+                <h1 class="text-title" data-translate="title">Bonjour, je suis <span class="text-title-name-fr">Arthur Wuhrlin</span></h1>
+                <h2 class="text" data-translate="subtitle">Et voici mon Portfolio</h2>
+            </header>
+        </main>
+        <canvas id="c"></canvas>
+    </body>
 </html>
