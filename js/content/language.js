@@ -31,7 +31,6 @@ function setLanguage(language) {
       const key = el.getAttribute('data-translate');
       if(key == 'theme') {
         const currentTheme = localStorage.getItem('theme');
-        console.log("Theme ! ", currentTheme);
         el.innerHTML = translations[language][key][currentTheme];
       }
       else {
