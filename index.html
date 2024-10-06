@@ -11,6 +11,7 @@
                 }
             }
         </script>
+        <script type="module" src="./js/content/SPAHandler.js"></script>
         <script type="module" src="./js/three/boidSim.js"></script>
         <script type="module" src="./js/content/theme.js"></script>
         <script type="module" src="./js/content/language.js"></script>
@@ -32,13 +33,13 @@
         <div class="container-col">
             <nav class="horizontal-bar" id="home-bar">
                 <ul class="button-container">
-                    <li class="home"><a>Home</a></li>
-                    <li class="projects"><a href="./projects.html">Projects</a></li>
-                    <li class="blog"><a href="./blog.html">Blog</a></li>
-                    <li class="about"><a href="./about.html">About</a></li>
+                    <li class="home"><button id="home-btn">Home</button></li>
+                    <li class="projects"><button id="projects-btn">Projects</button></li>
+                    <li class="blog"><button id="blog-btn">Blog</button></li>
+                    <li class="about"><button id="about-btn">About</button></li>
                 </ul>
             </nav> 
-            <div class="content">
+            <div class="content" id="content">
                 <div>
                     <h1 class="text-title" data-translate="title">Bonjour, je suis <span class="text-title-name-fr">Arthur Wuhrlin</span></h1>
                     <h2 data-translate="subtitle">Et voici mon Portfolio</h2>
