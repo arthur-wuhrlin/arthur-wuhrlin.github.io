@@ -196,7 +196,7 @@ body.light {
   padding-left: 0;
 }
 
-ul li a {
+ul li * {
   font-size: min(15px, 4vw);
 }
 
