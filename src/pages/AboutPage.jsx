@@ -31,7 +31,10 @@ const AboutPage = () => {
     { id: 'exp1', roleKey: 'about.experience.role1.name', companyKey: 'about.experience.role1.company', period: 'Summer 2023', responsibilityKeys: ['about.experience.role1.resp1', 'about.experience.role1.resp2'] },
   ];
 
-  const cvPath = '/cv_arthur_wuhrlin.pdf'; // Example path
+  const cvPaths = {
+    en: '/cv_arthur_wuhrlin_en.pdf',
+    fr: '/cv_arthur_wuhrlin_fr.pdf'
+  };
 
   return (
     <div className="about-page">
