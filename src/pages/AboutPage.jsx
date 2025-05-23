@@ -31,7 +31,10 @@ const AboutPage = () => {
     { id: 'exp1', roleKey: 'about.experience.role1.name', companyKey: 'about.experience.role1.company', period: 'Summer 2023', responsibilityKeys: ['about.experience.role1.resp1', 'about.experience.role1.resp2'] },
   ];
 
-  const cvPath = '/cv_arthur_wuhrlin.pdf'; // Example path
+  const cvPaths = {
+    en: '/cv_arthur_wuhrlin_en.pdf',
+    fr: '/cv_arthur_wuhrlin_fr.pdf'
+  };
 
   return (
     <div className="about-page">
@@ -94,7 +97,13 @@ const AboutPage = () => {
       {/* CV Download Section */}
       <section className="about-section">
         <h2>{t('about.cvDownloadTitle')}</h2>
-        <button href={cvPath} download target="_blank" rel="noopener noreferrer" className="with-border">
+        <a 
+          href={cvPaths[language] || cvPaths.en} 
+          download={`cv_arthur_wuhrlin_${language}.pdf`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="cv-download-button"
+        >
           {t('about.cvDownloadButton')}
         </button>
       </section>
