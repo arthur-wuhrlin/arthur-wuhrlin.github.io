@@ -8,19 +8,27 @@ const AboutPage = () => {
   const introTextKey = 'about.introduction'; // Simplified to a single key
 
   const skillsData = [
-    { id: 'skill1', name: 'JavaScript', level: 90, levelDescriptionKey: 'skills.level.expert' },
-    { id: 'skill2', name: 'React', level: 85, levelDescriptionKey: 'skills.level.expert' },
-    { id: 'skill3', name: 'Python', level: 70, levelDescriptionKey: 'skills.level.proficient' },
-    { id: 'skill4', name: 'CSS', level: 60, levelDescriptionKey: 'skills.level.intermediate' },
+    { id: 'skill1', name: 'C++', level: 80, levelDescriptionKey: 'about.skills.level.advanced' },
+    { id: 'skill2', name: 'Vulkan', level: 70, levelDescriptionKey: 'about.skills.level.advanced' },
+    { id: 'skill3', name: 'OpenGL', level: 80, levelDescriptionKey: 'about.skills.level.advanced' },
+    { id: 'skill4', name: 'C#', level: 75, levelDescriptionKey: 'about.skills.level.advanced' },
+    { id: 'skill5', name: 'Unity', level: 85, levelDescriptionKey: 'about.skills.level.advanced' },
+    { id: 'skill6', name: 'Python', level: 80, levelDescriptionKey: 'about.skills.level.advanced' },
+    { id: 'skill7', name: 'C', level: 65, levelDescriptionKey: 'about.skills.level.intermediate' },
+    { id: 'skill8', name: 'Java', level: 60, levelDescriptionKey: 'about.skills.level.intermediate' },
+    { id: 'skill9', name: 'React', level: 45, levelDescriptionKey: 'about.skills.level.beginner' },
+    { id: 'skill10', name: 'CSS', level: 45, levelDescriptionKey: 'about.skills.level.beginner' },
+    { id: 'skill11', name: 'bash', level: 45, levelDescriptionKey: 'about.skills.level.beginner' },
   ];
 
   const educationData = [
-    { id: 'edu1', degreeKey: 'education.degree1.name', institutionKey: 'education.degree1.institution', period: '2020 - 2024', descriptionKeys: ['education.degree1.desc1'] },
-    { id: 'edu2', degreeKey: 'education.degree2.name', institutionKey: 'education.degree2.institution', period: '2018 - 2020', descriptionKeys: [] },
+    { id: 'edu3', degreeKey: 'about.education.degree3.name', institutionKey: 'about.education.degree3.institution', period: '2024 - 2025', descriptionKeys: ['about.education.degree3.desc1'] },
+    { id: 'edu2', degreeKey: 'about.education.degree2.name', institutionKey: 'about.education.degree2.institution', period: '2022 - 2025', descriptionKeys: ['about.education.degree2.desc1'] },
+    { id: 'edu1', degreeKey: 'about.education.degree1.name', institutionKey: 'about.education.degree1.institution', period: '2020 - 2022', descriptionKeys: [] },
   ];
 
   const experienceData = [
-    { id: 'exp1', roleKey: 'experience.role1.name', companyKey: 'experience.role1.company', period: 'Summer 2023', responsibilityKeys: ['experience.role1.resp1', 'experience.role1.resp2'] },
+    { id: 'exp1', roleKey: 'about.experience.role1.name', companyKey: 'about.experience.role1.company', period: 'Summer 2023', responsibilityKeys: ['about.experience.role1.resp1', 'about.experience.role1.resp2'] },
   ];
 
   const cvPath = '/cv_arthur_wuhrlin.pdf'; // Example path
@@ -57,12 +65,10 @@ const AboutPage = () => {
         <div className="education-container">
           {educationData.map(edu => (
             <div key={edu.id} className="cv-item">
-              <h3>{t(edu.degreeKey)}</h3>
-              <p><em>{t(edu.institutionKey)}</em> | {edu.period}</p>
+              <h3>{t(edu.degreeKey)} | {t(edu.institutionKey)}</h3>
+              <p> {edu.period}</p>
               {edu.descriptionKeys && edu.descriptionKeys.length > 0 && (
-                <ul>
-                  {edu.descriptionKeys.map(descKey => <li key={descKey}>{t(descKey)}</li>)}
-                </ul>
+                edu.descriptionKeys.map(descKey => <p key={descKey}>{t(descKey)}</p>)
               )}
             </div>
           ))}
@@ -78,9 +84,7 @@ const AboutPage = () => {
               <h3>{t(exp.roleKey)}</h3>
               <p><em>{t(exp.companyKey)}</em> | {exp.period}</p>
               {exp.responsibilityKeys && exp.responsibilityKeys.length > 0 && (
-                <ul>
-                  {exp.responsibilityKeys.map(respKey => <li key={respKey}>{t(respKey)}</li>)}
-                </ul>
+                  <p>{exp.responsibilityKeys.map(respKey => {t(respKey)})}</p>
               )}
             </div>
           ))}
@@ -90,9 +94,9 @@ const AboutPage = () => {
       {/* CV Download Section */}
       <section className="about-section">
         <h2>{t('about.cvDownloadTitle')}</h2>
-        <a href={cvPath} download target="_blank" rel="noopener noreferrer" className="cv-download-button">
+        <button href={cvPath} download target="_blank" rel="noopener noreferrer" className="with-border">
           {t('about.cvDownloadButton')}
-        </a>
+        </button>
       </section>
     </div>
   );

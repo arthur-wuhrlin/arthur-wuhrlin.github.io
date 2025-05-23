@@ -23,18 +23,23 @@ const translations = {
       skills: {
         level: {
           expert: "Expert",
-          proficient: "Proficient",
+          advanced: "Advanced",
           intermediate: "Intermediate",
           beginner: "Beginner"
         }
       },
       education: {
-        degree1: {
+        degree3: {
           name: "Master of Science in Software Engineering",
           institution: "National University of Singapore",
           desc1: "Relevant coursework: Advanced Algorithms, System Design, AI."
         },
         degree2: {
+          name: "Engineering Diploma in Computer Science",
+          institution: "National University of Singapore",
+          desc1: "Relevant coursework: Advanced Algorithms, System Design, AI."
+        },
+        degree1: {
           name: "Preparatory Classes MPSI/MP*",
           institution: "Lycée Kléber, Strasbourg"
         }
@@ -69,18 +74,23 @@ const translations = {
       skills: {
         level: {
           expert: "Expert",
-          proficient: "Compétent",
+          advanced: "Avancé",
           intermediate: "Intermédiaire",
           beginner: "Débutant"
         }
       },
       education: {
-        degree1: {
+        degree3: {
           name: "Master of Science en Génie Logiciel",
           institution: "Université Nationale de Singapour",
           desc1: "Cours pertinents : Algorithmes avancés, Conception de systèmes, IA."
         },
         degree2: {
+          name: "Diplôme d'ingénieur en Informatique",
+          institution: "Telecom Paris",
+          desc1: "Relevant coursework: Advanced Algorithms, System Design, AI."
+        },
+        degree1: {
           name: "Classes Préparatoires MPSI/MP*",
           institution: "Lycée Kléber, Strasbourg"
         }
