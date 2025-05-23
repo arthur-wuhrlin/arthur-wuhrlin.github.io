@@ -2,11 +2,11 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const BlogPage = () => {
-  // const { t } = useLanguage(); // For future use when translations are added
+  const { t } = useLanguage();
 
   return (
     <div>
-      <h2 className="text">Blog : Work in progress</h2>
+      <h2 className="text">{t('pages.blog.wip')}</h2>
     </div>
   );
 };

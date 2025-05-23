@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext'; // Included for potential future use
+import useImageHover from '../hooks/useImageHover';
 
 const ProjectsPage = () => {
   // const { t } = useLanguage(); // Not used yet, but available
@@ -36,25 +37,28 @@ const ProjectsPage = () => {
 
   return (
     <div className="box-container">
-      {projectsData.map((project, index) => (
-        <div className="box" key={index}>
-          <div className="text-hover-zoom">
-            <h2>
-              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                {project.title}
-              </a>
-            </h2>
+      {projectsData.map((project, index) => {
+        const imageRef = useRef(null);
+        useImageHover(imageRef);
+
+        return (
+          <div className="box" key={index}>
+            <div className="text-hover-zoom">
+              <h2>
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                  {project.title}
+                </a>
+              </h2>
+            </div>
+            <div className="image-container">
+              <img ref={imageRef} src={project.imageSrc} alt={`${project.title} thumbnail`} />
+            </div>
+            {project.descriptionParas.map((paragraph, pIndex) => (
+              <p key={pIndex}>{paragraph}</p>
+            ))}
           </div>
-          <div className="image-container">
-            <img src={project.imageSrc} alt={`${project.title} thumbnail`} />
-          </div>
-          {project.descriptionParas.map((paragraph, pIndex) => (
-            <p key={pIndex}>{paragraph}</p>
-          ))}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
-
-export default ProjectsPage;
