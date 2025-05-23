@@ -156,17 +156,35 @@ a {
 
 /* Dark mode variables */
 body.dark {
-  --theme-opposed-color: white;
+  --theme-opposed-color: white; /* Main text color in dark mode */
   --background-color: rgb(30, 30, 30);
-  --background-color-2: rgb(35, 35, 35);
-  --foreground-color: white;
+  --background-color-2: rgb(35, 35, 35); /* Slightly lighter background for elements */
+  --foreground-color: white; /* General foreground, often same as opposed in simple themes */
+  --link-color: #64b5f6; /* Light blue for links */
+  --theme-text-color: white; /* Explicit main text color */
+
+  --theme-accent-color: #0d6efd; 
+  --theme-accent-hover-color: #0b5ed7;
+  --theme-secondary-bg-color: #2c3034; 
+  --theme-border-color: #495057;
+  --theme-muted-color: #adb5bd;
+  --theme-button-text-color: #ffffff;
 }
 
 body.light {
-  --theme-opposed-color: black;
+  --theme-opposed-color: black; /* Main text color in light mode */
   --background-color: white;
-  --background-color-2: rgb(250, 250, 250);
-  --foreground-color: rgb(30, 30, 30);
+  --background-color-2: rgb(250, 250, 250); /* Slightly darker background for elements */
+  --foreground-color: rgb(30, 30, 30); /* General foreground */
+  --link-color: #007bff; /* Standard blue for links */
+  --theme-text-color: rgb(30, 30, 30); /* Explicit main text color */
+
+  --theme-accent-color: #007bff;
+  --theme-accent-hover-color: #0056b3;
+  --theme-secondary-bg-color: #f8f9fa;
+  --theme-border-color: #dee2e6;
+  --theme-muted-color: #6c757d;
+  --theme-button-text-color: #ffffff;
 }
 
 .container-col {
@@ -261,4 +279,126 @@ ul li a {
 #home-bar .button-container li.active a {
   font-weight: bold;
   /* You can add other styles like color, text-decoration, etc. */
+}
+
+/* About Page Specific Styles */
+.about-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-page h2 { /* Section titles */
+  font-size: 2em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--theme-accent-color, #444);
+  padding-bottom: 10px;
+  color: var(--theme-accent-color); /* Ensure h2 titles also use accent color */
+}
+
+.about-page p, .about-page li {
+  line-height: 1.6;
+  margin-bottom: 10px;
+  /* color: var(--theme-text-color); Ensure general text color is applied if not by '*' */
+}
+
+/* Introduction Section */
+.about-page .introduction-text {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+/* Skills Section */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.skill-item {
+  background-color: var(--theme-secondary-bg-color, #f9f9f9);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.skill-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--theme-accent-color, #333);
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: var(--theme-border-color, #e0e0e0);
+  border-radius: 4px;
+  height: 20px;
+  margin-bottom: 5px;
+  overflow: hidden; 
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--theme-accent-color, #007bff);
+  border-radius: 4px 0 0 4px; 
+  text-align: right;
+  padding-right: 5px; 
+  line-height: 20px; 
+  color: white; 
+  font-size: 0.8em;
+}
+
+.skill-item .skill-level-description {
+  font-size: 0.9em;
+  font-style: italic;
+  color: var(--theme-muted-color, #666);
+}
+
+/* CV Sections (Education & Experience) */
+.cv-item {
+  background-color: var(--theme-secondary-bg-color, #fff);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.cv-item h3 { /* Degree / Role */
+  font-size: 1.4em;
+  margin-bottom: 5px;
+  color: var(--theme-accent-color, #333);
+}
+
+.cv-item p em { /* Institution / Company & Period */
+  font-size: 1em;
+  font-style: normal; 
+  color: var(--theme-text-color); 
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.cv-item ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+/* CV Download Button */
+.cv-download-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--theme-accent-color, #007bff);
+  color: var(--theme-button-text-color, #ffffff);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cv-download-button:hover {
+  background-color: var(--theme-accent-hover-color, #0056b3);
 }
