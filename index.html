@@ -1,68 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-        
-        <!--        <script type="importmap">
-            {
-                "imports": {
-                    "three": "https://unpkg.com/three@0.138.0/build/three.module.js"
-                }
-            }
-        </script>
- <script type="module" src="./js/content/language.js"></script> -->
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-
-        <title>Arthur Wuhrlin - Portfolio</title>
-        <link rel="icon" href="/assets/favicon-DZJYdhM_.jpg">
-
-      <script type="module" crossorigin src="/assets/main-BG5_u7Kh.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/main-D-H8jJTv.css">
-    </head>
-    <body>
-        <div class="container-col">
-            <nav class="horizontal-bar" id="home-bar">
-                <ul class="button-container">
-                    <li class="home"><button id="home-btn">Home</button></li>
-                    <li class="projects"><button id="projects-btn">Projects</button></li>
-                    <!-- <li class="blog"><button id="blog-btn">Blog</button></li>
-                    <li class="about"><button id="about-btn">About</button></li> -->
-                </ul>
-            </nav> 
-            <div class="content" id="content">
-                <div>
-                    <h1 class="text-title" data-translate="title">Bonjour, je suis <span class="text-title-name-fr">Arthur Wuhrlin</span></h1>
-                    <h2 data-translate="subtitle">Et voici mon Portfolio</h2>
-                </div>
-            </div>
-            <div class="horizontal-bar">
-                <div class="button-container" id="social-icons">
-                    <a href="https://www.linkedin.com/in/arthur-wuhrlin" target="_blank" class="icon-link">
-                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='undefined'%20height='undefined'%20viewBox='0%200%2020%2020'%3e%3cpath%20fill='currentColor'%20d='M10%20.4C4.698.4.4%204.698.4%2010s4.298%209.6%209.6%209.6s9.6-4.298%209.6-9.6S15.302.4%2010%20.4zM7.65%2013.979H5.706V7.723H7.65v6.256zm-.984-7.024c-.614%200-1.011-.435-1.011-.973c0-.549.409-.971%201.036-.971s1.011.422%201.023.971c0%20.538-.396.973-1.048.973zm8.084%207.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355c-.537%200-.856.371-.997.728c-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01%201.932-1.01c1.279%200%202.238.857%202.238%202.699v3.699z'/%3e%3c/svg%3e" alt="LinkedIn" class="icon">
-                    </a>
-                    <a href="https://github.com/JudasBricot" target="_blank" class="icon-link">
-                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='undefined'%20height='undefined'%20viewBox='0%200%2024%2024'%3e%3cpath%20fill='currentColor'%20d='M12%20.297c-6.63%200-12%205.373-12%2012c0%205.303%203.438%209.8%208.205%2011.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422%2018.07%203.633%2017.7%203.633%2017.7c-1.087-.744.084-.729.084-.729c1.205.084%201.838%201.236%201.838%201.236c1.07%201.835%202.809%201.305%203.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38%201.235-3.22c-.135-.303-.54-1.523.105-3.176c0%200%201.005-.322%203.3%201.23c.96-.267%201.98-.399%203-.405c1.02.006%202.04.138%203%20.405c2.28-1.552%203.285-1.23%203.285-1.23c.645%201.653.24%202.873.12%203.176c.765.84%201.23%201.91%201.23%203.22c0%204.61-2.805%205.625-5.475%205.92c.42.36.81%201.096.81%202.22c0%201.606-.015%202.896-.015%203.286c0%20.315.21.69.825.57C20.565%2022.092%2024%2017.592%2024%2012.297c0-6.627-5.373-12-12-12'/%3e%3c/svg%3e" alt="GitHub" class="icon">
-                    </a>
-                    <a href="mailto:arthur.wuhrlin@nus.edu.sg" target="_blank" id="email" class="icon-link">
-                        <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='2%202%2020%2020'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M22%2012C22%2017.5228%2017.5228%2022%2012%2022C6.47715%2022%202%2017.5228%202%2012C2%206.47715%206.47715%202%2012%202C17.5228%202%2022%206.47715%2022%2012ZM7.005%209C7.005%208.45%207.45%208%208%208H16C16.55%208%2017%208.45%2017%209V15C17%2015.55%2016.55%2016%2016%2016H8C7.45%2016%207%2015.55%207%2015L7.005%209ZM12%2012.5L8.00001%209.99997V15H16V9.99997L12%2012.5ZM12%2011.5L8.00001%209.00001H16L12%2011.5Z'%20fill='%23000000'/%3e%3c/svg%3e" alt="Mail" class="icon">
-                    </a>
-                </div>
-                <div class="button-container" id="controls">
-                    <button id="theme-toggle" data-translate="theme">Light Mode</button>
-                    <!-- <button id="language-toggle">FR</button> -->
-                </div> 
-            </div> 
-       </div>
-        <canvas id="c"></canvas>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpg" href="/img/favicon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arthur Wuhrlin - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/main-CstRwSkg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-B2RLobcD.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
