@@ -7,7 +7,7 @@ const ProjectsPage = () => {
 
   const projectsData = [
     {
-      title: "🏝️ Island Generation and Raycasting 🏝️",
+      title: "Island Generation and Raycasting",
       githubLink: "https://github.com/JudasBricot/2D-RayTracing-Island",
       imageSrc: "/img/project-isld-thumbnail-400.jpg",
       descriptionParas: [
@@ -16,7 +16,7 @@ const ProjectsPage = () => {
       ]
     },
     {
-      title: "🌊 Simulating Ocean 🌊",
+      title: "Simulating Ocean",
       githubLink: "https://github.com/JudasBricot/Simple-Game-Engine/tree/fft-ocean",
       imageSrc: "/img/project-wvs-thumbnail-400.png",
       descriptionParas: [
@@ -25,14 +25,38 @@ const ProjectsPage = () => {
       ]
     },
     {
-      title: "🫗 GlassOverflow",
+      title: "GlassOverflow",
       githubLink: "https://github.com/Skyepulse/FluidSimulatorGame/tree/x64-release-files",
       imageSrc: "/img/project-gls-0.png",
       descriptionParas: [
         "This is a school group project that features 2D real-time fluid simulation. I was in charge of designing and implementing the 2D engine.",
         "Additionally, I added a rendering pass for the game that takes the positions of the water particles and generates pixel art-styled visuals. This entire process is exclusively done on the GPU using Compute Shaders."
       ]
-    }
+    },
+    {
+      title: "Generating faces with diffusion-based models",
+      githubLink: "https://github.com/arthur-wuhrlin/CS5242",
+      imageSrc: "/img/project_face.png",
+      descriptionParas: [
+        "In this project, with three other students, we explore various method for personalized content synthesis applied to face generation using few user-specified samples. Namely, Custom Diffusion, Cross Initialization, LoRA and Textual Inversion. We also propose to combine the Custom Diffusion method with the Cross Initialization method and provide some evaluation metrics we used to assert the quality of the different methods used."
+      ]
+    },  
+    {
+      title: "Marching Cubes Implementation",
+      githubLink: "https://github.com/arthur-wuhrlin/marching-cubes",
+      imageSrc: "/img/project_mcb.png",
+      descriptionParas: [
+        "This is the source code for my TIPE for which I implemented the algorithm of marching cubes in Python. It was developped during my second year in preparatory school back in 2022."
+      ]
+    },
+    {
+      title: "Smoking Algorithm",
+      githubLink: "https://github.com/arthur-wuhrlin/Smoking-Algorithm",
+      imageSrc: "/img/project_salg.png",
+      descriptionParas: [
+        "Following my readings on the generative art <u><a href='http://rainbowsmoke.hu/tech'>Smoking Algorithm</a></u>, I implemented this algorithm in C# to generate colorful pictures."
+      ]
+    }     
   ];
 
   return (
