@@ -4,15 +4,18 @@ import { Boid, DETECTION_RADIUS } from "./boid.js";
 export class Flock {
   constructor(
     scene, 
-    boidNumber) {
+    boidNumber,
+    simulationDimensions // { width, height }
+    ) {
     this.boidArray = [];
     this.scene = scene;
     for (let index = 0; index < boidNumber; index++) {
-      this.boidArray.push(new Boid(scene));
+      // Pass simulationDimensions to Boid constructor
+      this.boidArray.push(new Boid(scene, undefined, undefined, undefined, simulationDimensions));
     }
   }
 
-  update()  {
+  update()  { // simulationDimensions can be passed here if dynamic updates are needed
     this.boidArray.forEach(boid => {
       let neighbors = [];
       this.boidArray.forEach(candidate => {

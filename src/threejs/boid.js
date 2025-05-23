@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import size from "./boidSim.js";
+// import size from "./boidSim.js"; // Removed
 
 const UP = new THREE.Vector3(0, 0, 1);
 const SIZE = new THREE.Vector2(25.0, 25.0);
@@ -13,13 +13,23 @@ const REPULSION_RADIUS = 25;
 export class Boid {
   constructor(
     scene, 
-    position = new THREE.Vector2(Math.random() * size.width - size.width / 2, Math.random() * size.height - size.height / 2),
+    position, // Default will be handled based on simulationDimensions
     direction = new THREE.Vector2(Math.random(), Math.random()).normalize(), 
-    initialSpeed = MAX_VELOCITY) {
+    initialSpeed = MAX_VELOCITY,
+    simulationDimensions // { width, height }
+    ) {
+
+    this.simulationDimensions = simulationDimensions; // Store for later use
+
+    // Default position calculation using simulationDimensions
+    const defaultPosition = new THREE.Vector2(
+      Math.random() * this.simulationDimensions.width - this.simulationDimensions.width / 2,
+      Math.random() * this.simulationDimensions.height - this.simulationDimensions.height / 2
+    );
 
     this.setMesh(scene);
 
-    this.position = position;
+    this.position = position || defaultPosition; // Use provided position or default
     this.velocity = direction.multiplyScalar( initialSpeed );
     this.acceleration = new THREE.Vector2( 0, 0 );
 
@@ -122,7 +132,7 @@ export class Boid {
     this.position.add(this.velocity);
 
     // clamp in view
-    const limit = new THREE.Vector2((size.width + SIZE.x) / 2, (size.height + SIZE.y) / 2);
+    const limit = new THREE.Vector2((this.simulationDimensions.width + SIZE.x) / 2, (this.simulationDimensions.height + SIZE.y) / 2);
     if(this.position.x < -limit.x) {
       this.position.setX(limit.x);
     } else if(this.position.x > limit.x) {

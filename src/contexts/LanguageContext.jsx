@@ -7,14 +7,22 @@ const translations = {
     subtitle: "And this is my Porfolio",
     theme: { dark: "Light Mode", light: "Dark Mode"},
     nav: { home: "Home", projects: "Projects", blog: "Blog", about: "About" },
-    buttons: { theme: "Toggle Theme", language: "FR" }
+    buttons: { theme: "Toggle Theme", language: "FR" },
+    pages: {
+      blog: { title: "Blog", wip: "Blog : Work in progress" },
+      about: { title: "About", wip: "About : Work in progress" }
+    }
   },
   fr: {
     title: "Bonjour, je suis <span class='text-title-name-fr'>Arthur Wuhrlin</span>",
     subtitle: "Et voici mon Porfolio",
     theme: { dark: "Mode Lumineux", light: "Mode sombre"},
     nav: { home: "Accueil", projects: "Projets", blog: "Blog", about: "À Propos" },
-    buttons: { theme: "Changer Thème", language: "EN" }
+    buttons: { theme: "Changer Thème", language: "EN" },
+    pages: {
+      blog: { title: "Blog", wip: "Blog : En cours de construction" },
+      about: { title: "À Propos", wip: "À Propos : En cours de construction" }
+    }
   }
 };
 
