@@ -13,8 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <script>
       (function() {
-        var preferredTheme = localStorage.getItem('theme') || 'dark'; // Default theme is 'dark'
-        document.body.classList.add(preferredTheme);
+        // Check for prefers-color-scheme: dark
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+        } else {
+          // Default to light theme if not dark or if matchMedia is not supported
+          document.body.classList.add('light');
+        }
       })();
     </script>
   </head>
