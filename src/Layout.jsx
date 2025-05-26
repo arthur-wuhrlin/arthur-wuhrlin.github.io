@@ -4,12 +4,13 @@ import NavigationBar from './components/NavigationBar';
 import FooterBar from './components/FooterBar';
 import ThreeCanvas from './components/ThreeCanvas';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => { // Destructure location here
   return (
     <>
       <div className="container-col">
         <NavigationBar />
         <motion.div
+          key={location.pathname} // Add key here
           className="content"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
