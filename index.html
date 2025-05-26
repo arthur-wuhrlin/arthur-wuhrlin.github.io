@@ -11,6 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        var preferredTheme = localStorage.getItem('theme') || 'dark'; // Default theme is 'dark'
+        document.body.classList.add(preferredTheme);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
