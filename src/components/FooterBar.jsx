@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/ThemeContext';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const FooterBar = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme(); // toggleTheme removed
   const { language, toggleLanguage, t } = useLanguage();
 
   return (
@@ -20,9 +20,7 @@ const FooterBar = () => {
         </a>
       </div>
       <div className="button-container" id="controls">
-        <button id="theme-toggle" onClick={toggleTheme}>
-          {t(theme === 'dark' ? 'theme.light' : 'theme.dark')}
-        </button>
+        {/* Theme toggle button removed */}
         <button id="language-toggle" onClick={toggleLanguage}>
           {language.toUpperCase() === 'EN' ? 'FR' : 'EN'}
         </button>
