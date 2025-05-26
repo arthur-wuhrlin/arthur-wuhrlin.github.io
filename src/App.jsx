@@ -13,7 +13,7 @@ import AboutPage from './pages/AboutPage';
 function RoutedAppContent() {
   const location = useLocation(); // useLocation is called here
   return (
-    <Layout>
+    <Layout location={location}> {/* Pass location here */}
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomePage />} />
