@@ -356,17 +356,43 @@ opacity: 0.95;
 
 /* CV Sections (Education & Experience) */
 .cv-item {
-  background-color: var(--theme-secondary-bg-color, #fff);
+  background-color: var(--theme-secondary-bg-color); /* Removed fallback, assuming var is always defined */
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-  opacity: 0.95;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Updated box-shadow */
+  /* opacity: 0.95; removed */
 }
+
+.cv-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+/* .cv-item-main-info is a flex child, no specific styles needed for layout yet */
 
 .cv-item h3 { /* Degree / Role */
   font-size: 1.4em;
-  margin-bottom: 5px;
+  margin-bottom: 2px; /* Adjusted margin */
+  color: var(--theme-opposed-color); /* Ensure color, though likely inherited */
+}
+
+p.institution {
+  font-size: 1em;
+  color: var(--theme-muted-color);
+  margin-top: 0;
+  margin-bottom: 0; /* Or small value like 5px if too tight, but header has own margin-bottom */
+  line-height: 1.4; /* Adjust line-height if needed, from default 1.6 */
+}
+
+.cv-item-period p {
+  font-size: 0.9em;
+  color: var(--theme-muted-color);
+  text-align: right;
+  margin: 0;
+  line-height: 1.4; /* Adjust line-height */
 }
 
 /* Courses List Styling */
