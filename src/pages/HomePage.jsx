@@ -6,8 +6,8 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1 className="text-title" dangerouslySetInnerHTML={{ __html: "Welcome to<br/>My Portfolio" }} /> {/* Content updated */}
-      <h2>Arthur Wuhrlin - Software Engineer</h2> {/* Content updated */}
+      <h1 className="text-title" dangerouslySetInnerHTML={{ __html: "Hi, I'm <span class='text-title-name'>Arthur Wuhrlin</span>" }} /> 
+      <h2>And this is my Portfolio</h2> {/* Content updated */}
     </div>
   );
 };
