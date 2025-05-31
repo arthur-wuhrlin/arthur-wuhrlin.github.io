@@ -13,13 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <script>
       (function() {
-        // Check for prefers-color-scheme: dark
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('dark');
-        } else {
-          // Default to light theme if not dark or if matchMedia is not supported
-          document.body.classList.add('light');
+        var themeToApply = 'light'; // Default theme
+        var savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme) {
+          themeToApply = savedTheme;
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          themeToApply = 'dark';
         }
+        // If savedTheme is null AND prefers-color-scheme is not dark, it defaults to 'light' (as initialized)
+
+        document.body.classList.add(themeToApply);
       })();
     </script>
   </head>

@@ -3,48 +3,65 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // Step 2: Initialize theme state based on system preference
+  // Step 1: Initial State (useState)
   const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme;
+    }
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }
-    return 'light'; // Default to light
+    return 'light'; // Default to light if no localStorage and no dark preference
   });
 
-  // Step 3: useEffect to listen for changes in system theme preference
+  // Step 2: toggleTheme Function
+  const toggleTheme = () => {
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme); // Save explicit choice to localStorage
+      return newTheme;
+    });
+  };
+
+  // Step 3: System Theme Change Listener (useEffect for prefers-color-scheme)
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     const handleChange = (e) => {
-      setTheme(e.matches ? 'dark' : 'light');
+      // Only change theme if user hasn't made an explicit choice via toggleTheme (i.e., no theme in localStorage)
+      if (localStorage.getItem('theme') === null) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
     };
-    
+
     mediaQuery.addEventListener('change', handleChange);
-    
-    // Initial check for the theme, in case it changed between useState and this effect
-    setTheme(mediaQuery.matches ? 'dark' : 'light');
+
+    // Initial check for system theme preference, but only if no theme is in localStorage.
+    // This handles cases where system theme changes while the app is not open,
+    // and no localStorage override exists.
+    if (localStorage.getItem('theme') === null) {
+      setTheme(mediaQuery.matches ? 'dark' : 'light');
+    }
 
     return () => {
       mediaQuery.removeEventListener('change', handleChange);
     };
   }, []); // Empty dependency array: runs once on mount, cleans up on unmount
 
-  // Step 4: useEffect to apply the theme class to document.body
+  // Step 4: DOM Class Application (useEffect for theme state)
   useEffect(() => {
-    document.body.className = ''; // Clear existing classes
+    document.body.className = '';
     document.body.classList.add(theme);
-    // localStorage.setItem('theme', theme); // Step 1: Removed localStorage
   }, [theme]); // Runs whenever the theme state changes
 
-  // Step 5: toggleTheme function removed
-
-  // Step 6: Update ThemeContext.Provider value
+  // Step 5: Context Provider Value
   return (
-    <ThemeContext.Provider value={{ theme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   );
 };
 
-// Step 7: useTheme hook implicitly updated as ThemeContext.Provider only provides theme
+// Step 6: useTheme hook implicitly updated as ThemeContext.Provider provides theme and toggleTheme
 export const useTheme = () => useContext(ThemeContext);
