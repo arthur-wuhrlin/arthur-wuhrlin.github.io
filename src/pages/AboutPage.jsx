@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 // useLanguage import removed
 
 const AboutPage = () => {
   // useLanguage() call removed
+  const [openCourses, setOpenCourses] = useState({});
 
   // Placeholder Data (original structure maintained for now)
   const introTextKey = 'about.introduction';
@@ -100,18 +101,34 @@ const AboutPage = () => {
             <div key={edu.id} className="cv-item">
               <h3>{edu.degreeKey} | {edu.institutionKey}</h3>
               <p>{edu.period}</p>
-              {/* Render course list if present */}
+
+              {/* Toggle Button */}
               {edu.courses && edu.courses.length > 0 && (
+                <button
+                  onClick={() => {
+                    setOpenCourses(prev => ({ ...prev, [edu.id]: !prev[edu.id] }));
+                  }}
+                  className="toggle-courses-btn with-border"
+                  style={{ marginBottom: '10px', padding: '5px 10px', fontSize: '0.9em' }}
+                >
+                  {openCourses[edu.id] ? 'Hide Courses' : 'Show Courses'}
+                </button>
+              )}
+
+              {/* Conditionally Rendered Course List */}
+              {openCourses[edu.id] && edu.courses && edu.courses.length > 0 && (
                 <div className="courses-list">
                   <h4 className='align-left'>Courses:</h4>
+                  <ul>
                     {edu.courses.map(course => (
-                      <p key={course.courseName} className="course-item">
+                      <li key={course.courseName} className="course-item">
                         <a href={course.link} target="_blank" rel="noopener noreferrer">
                           {course.courseName}
                         </a>
-                        <span className="course-desc"> – {course.desc}</span>
-                      </p>
+                        <p className="course-desc">{course.desc}</p>
+                      </li>
                     ))}
+                  </ul>
                 </div>
               )}
               {/* Render description if present */}
