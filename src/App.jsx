@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { LanguageProvider } from './contexts/LanguageContext';
+// LanguageProvider import removed
 import Layout from './Layout';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 // AnimatePresence import removed as it's no longer used
@@ -28,11 +28,10 @@ function App() {
   // useLocation call removed from App
   return (
     <ThemeProvider>
-      <LanguageProvider>
-        <Router> {/* BrowserRouter */}
-          <RoutedAppContent /> {/* Render the new component */}
-        </Router>
-      </LanguageProvider>
+      {/* LanguageProvider wrapper removed */}
+      <Router> {/* BrowserRouter */}
+        <RoutedAppContent /> {/* Render the new component */}
+      </Router>
     </ThemeProvider>
   );
 }

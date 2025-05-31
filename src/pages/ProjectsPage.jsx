@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import { useLanguage } from '../contexts/LanguageContext'; // Included for potential future use
+// useLanguage import removed
 import useImageHover from '../hooks/useImageHover';
 
 const ProjectsPage = () => {
-  // const { t } = useLanguage(); // Not used yet, but available
+  // useLanguage() call removed
 
   const projectsData = [
     {
@@ -78,7 +78,8 @@ const ProjectsPage = () => {
               <img ref={imageRef} src={project.imageSrc} alt={`${project.title} thumbnail`} />
             </div>
             {project.descriptionParas.map((paragraph, pIndex) => (
-              <p key={pIndex}>{paragraph}</p>
+              // Assuming paragraph can be directly rendered or contains safe HTML
+              <p key={pIndex} dangerouslySetInnerHTML={{ __html: paragraph }} />
             ))}
           </div>
         );
@@ -87,4 +88,4 @@ const ProjectsPage = () => {
   );
 };
 
-export default ProjectsPage
+export default ProjectsPage;

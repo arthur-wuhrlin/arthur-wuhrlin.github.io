@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import { useLanguage } from '../contexts/LanguageContext';
+// useLanguage import removed
 
 const FooterBar = () => {
-  const { theme, toggleTheme } = useTheme(); // toggleTheme re-added
-  const { language, toggleLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  // useLanguage() call removed
 
   return (
     <div className="horizontal-bar">
@@ -21,11 +21,9 @@ const FooterBar = () => {
       </div>
       <div className="button-container" id="controls">
         <button id="theme-toggle" onClick={toggleTheme}>
-          {t(theme === 'dark' ? 'theme.light' : 'theme.dark')}
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'} {/* Text updated */}
         </button>
-        <button id="language-toggle" onClick={toggleLanguage}>
-          {language.toUpperCase() === 'EN' ? 'FR' : 'EN'}
-        </button>
+        {/* Language toggle button removed */}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+// useLanguage import removed
 
 const HomePage = () => {
-  const { t } = useLanguage();
+  // useLanguage() call removed
 
   return (
     <div>
-      <h1 className="text-title" dangerouslySetInnerHTML={{ __html: t('title') }} />
-      <h2>{t('subtitle')}</h2>
+      <h1 className="text-title" dangerouslySetInnerHTML={{ __html: "Welcome to<br/>My Portfolio" }} /> {/* Content updated */}
+      <h2>Arthur Wuhrlin - Software Engineer</h2> {/* Content updated */}
     </div>
   );
 };
