@@ -6,16 +6,7 @@ const ProjectsPage = () => {
   // useLanguage() call removed
 
   const projectsData = [
-    {
-      title: "Island Generation and Raycasting",
-      githubLink: "https://github.com/JudasBricot/2D-RayTracing-Island",
-      imageSrc: "/img/project-isld-thumbnail-400.jpg",
-      descriptionParas: [
-        "In this project, I used Unity to develop a simple Island generator. The islands are generated using my own implementation of the Perlin noise algorithm, combined with a falloff technique that ensures the border of the map is always water.",
-        "Additionally, I implemented a raytracing effect on the CPU, which applies shadows to all the pixels on the map, enhancing the visual realism of the generated islands."
-      ]
-    },
-    {
+        {
       title: "Simulating Ocean",
       githubLink: "https://github.com/JudasBricot/Simple-Game-Engine/tree/fft-ocean",
       imageSrc: "/img/project-wvs-thumbnail-400.png",
@@ -31,6 +22,15 @@ const ProjectsPage = () => {
       descriptionParas: [
         "This is a school group project that features 2D real-time fluid simulation. I was in charge of designing and implementing the 2D engine.",
         "Additionally, I added a rendering pass for the game that takes the positions of the water particles and generates pixel art-styled visuals. This entire process is exclusively done on the GPU using Compute Shaders."
+      ]
+    },
+    {
+      title: "Island Generation and Raycasting",
+      githubLink: "https://github.com/JudasBricot/2D-RayTracing-Island",
+      imageSrc: "/img/project-isld-thumbnail-400.jpg",
+      descriptionParas: [
+        "In this project, I used Unity to develop a simple Island generator. The islands are generated using my own implementation of the Perlin noise algorithm, combined with a falloff technique that ensures the border of the map is always water.",
+        "Additionally, I implemented a raytracing effect on the CPU, which applies shadows to all the pixels on the map, enhancing the visual realism of the generated islands."
       ]
     },
     {
@@ -54,7 +54,7 @@ const ProjectsPage = () => {
       githubLink: "https://github.com/arthur-wuhrlin/Smoking-Algorithm",
       imageSrc: "/img/project_salg.png",
       descriptionParas: [
-        "Following my readings on the generative art <u><a href='http://rainbowsmoke.hu/tech'>Smoking Algorithm</a></u>, I implemented this algorithm in C# to generate colorful pictures."
+        "Following my readings on the generative art Smoking Algorithm, I implemented this algorithm in C# to generate colorful pictures."
       ]
     }     
   ];

@@ -374,3 +374,7 @@ opacity: 0.95;
   border: 1px solid var(--theme-text-color, #444);
   border-radius: 5px;
 }
+
+.align-left {
+  text-align: left;
+}

@@ -29,7 +29,18 @@ const AboutPage = () => {
   ];
 
   const educationData = [
-    { id: 'edu3', degreeKey: 'Master of Science in Software Engineering', institutionKey: 'National University of Singapore', period: '2024 - 2025', descriptionKeys: ['Relevant coursework: Advanced Algorithms, System Design, AI.'] },
+    { id: 'edu3', 
+      degreeKey: 'Master of Science in Software Engineering', 
+      institutionKey: 'National University of Singapore', 
+      period: '2024 - 2025', 
+      courses: [
+        {courseName : "CS4350: Game Development Project", link: "https://nusmods.com/courses/CS4350/game-development-project", desc: "Group project based course aiming at building a game."},
+        {courseName : "CS5242: Neural Networks and Deep Learning", link: "https://nusmods.com/courses/CS5242/neural-networks-and-deep-learning", desc: "This course teaches the knowledge about practical Deep Learning networks through multiple assignments (CNN, VAE, VQ-VAE, FlashAttention implementation) and a final project."},
+        {courseName : "CS5477: 3D Computer Vision", link: "https://nusmods.com/courses/CS5477/3-d-computer-vision", desc: "This heavily math-based course teaches everything needed for computer vision. From projective geometry to essential algorithms like RANSSAC, including modern techniques for view synthesis like NeRF and 3D Gaussian Splatting."},
+        {courseName : "CS6240: Multimedia analysis", link: "https://nusmods.com/courses/CS6240/multimedia-analysis", desc: "PhD course aiming at showing current state of the art on MLLMs and their uses. Discussions included hallucination, measuring model performance, multimedia knowledge extraction,..."},
+        {courseName : "CS6101: Exploration of Computer Science Research", link: "https://nusmods.com/courses/CS6101/exploration-of-computer-science-research", desc: "Course aiming at showing different research area in computer science research. I worked with a research group working on improving current systems (GPU clusters, CUDA kernels, existing libraries like PyTorch) to enable faster AI model training and inference."},
+      ]
+    },
     { id: 'edu2', degreeKey: 'Engineering Diploma in Computer Science', institutionKey: 'Telecom Paris', period: '2022 - 2025', descriptionKeys: ['about.education.degree2.desc1'] },
     { id: 'edu1', degreeKey: 'Preparatory Classes MPSI/MP*', institutionKey: 'Lycée Kléber, Strasbourg"', period: '2020 - 2022', descriptionKeys: [] },
   ];
@@ -39,8 +50,8 @@ const AboutPage = () => {
   ];
 
   const cvPaths = {
-    en: '/cv_arthur_wuhrlin_en.pdf',
-    fr: '/cv_arthur_wuhrlin_fr.pdf' // Kept for structure, but 'fr' path won't be used
+    en: '/pdf/cv_arthur_wuhrlin_en.pdf',
+    fr: '/pdf/cv_arthur_wuhrlin_fr.pdf'
   };
 
   return (
@@ -88,7 +99,22 @@ const AboutPage = () => {
           {educationData.map(edu => (
             <div key={edu.id} className="cv-item">
               <h3>{edu.degreeKey} | {edu.institutionKey}</h3>
-              <p> {edu.period}</p>
+              <p>{edu.period}</p>
+              {/* Render course list if present */}
+              {edu.courses && edu.courses.length > 0 && (
+                <div className="courses-list">
+                  <h4 className='align-left'>Courses:</h4>
+                    {edu.courses.map(course => (
+                      <p key={course.courseName} className="course-item">
+                        <a href={course.link} target="_blank" rel="noopener noreferrer">
+                          {course.courseName}
+                        </a>
+                        <span className="course-desc"> – {course.desc}</span>
+                      </p>
+                    ))}
+                </div>
+              )}
+              {/* Render description if present */}
               {edu.descriptionKeys && edu.descriptionKeys.length > 0 && (
                 edu.descriptionKeys.map(descKey => <p key={descKey}>{descKey}</p>)
               )}
@@ -96,8 +122,6 @@ const AboutPage = () => {
           ))}
         </div>
       </section>
-
-      {/* Experience Section */}
       <section className="about-section">
         <h2>Experience</h2>
         <div className="experience-container">
@@ -116,16 +140,16 @@ const AboutPage = () => {
 
       {/* CV Download Section */}
       <section className="about-section">
-        <h2>Download CV</h2>
-        <a 
-          href={cvPaths.en} // Default to English CV
-          download="cv_arthur_wuhrlin_en.pdf" // Default to English CV name
+        <h2>Download</h2>
+        <button 
+          href={cvPaths['en'] || cvPaths.en} 
+          download={`cv_arthur_wuhrlin_en.pdf`} 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="cv-download-button with-border" // Added with-border for styling like a button
+          className="with-border"
         >
           Download CV
-        </a> {/* Changed button to a for correct download behavior */}
+        </button> {/* Changed button to a for correct download behavior */}
       </section>
     </div>
   );
