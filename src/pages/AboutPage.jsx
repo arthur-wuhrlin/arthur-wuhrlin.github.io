@@ -99,8 +99,15 @@ const AboutPage = () => {
         <div className="education-container">
           {educationData.map(edu => (
             <div key={edu.id} className="cv-item">
-              <h3>{edu.degreeKey} | {edu.institutionKey}</h3>
-              <p>{edu.period}</p>
+              <div className="cv-item-header">
+                <div className="cv-item-main-info">
+                  <h3>{edu.degreeKey}</h3>
+                  <p className="institution">{edu.institutionKey}</p>
+                </div>
+                <div className="cv-item-period">
+                  <p>{edu.period}</p>
+                </div>
+              </div>
 
               {/* Toggle Button */}
               {edu.courses && edu.courses.length > 0 && (
