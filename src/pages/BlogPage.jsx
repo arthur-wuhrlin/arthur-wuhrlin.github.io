@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+// useLanguage import removed
 
 const BlogPage = () => {
-  const { t } = useLanguage();
+  // useLanguage() call removed
 
   return (
     <div>
-      <h2 className="text">{t('pages.blog.wip')}</h2>
+      <h2 className="text">Blog - Work in Progress</h2> {/* Text updated */}
     </div>
   );
 };

@@ -1,11 +1,11 @@
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+// useLanguage import removed
 
 const AboutPage = () => {
-  const { t, language } = useLanguage(); // Assuming 'language' is provided by useLanguage for introText
+  // useLanguage() call removed
 
-  // Placeholder Data (to be moved to LanguageContext or a dedicated data file later)
-  const introTextKey = 'about.introduction'; // Simplified to a single key
+  // Placeholder Data (original structure maintained for now)
+  const introTextKey = 'about.introduction';
 
   const skillsData = [
     { id: 'skill1', name: 'C++', level: 80, levelDescriptionKey: 'about.skills.level.advanced' },
@@ -33,30 +33,30 @@ const AboutPage = () => {
 
   const cvPaths = {
     en: '/cv_arthur_wuhrlin_en.pdf',
-    fr: '/cv_arthur_wuhrlin_fr.pdf'
+    fr: '/cv_arthur_wuhrlin_fr.pdf' // Kept for structure, but 'fr' path won't be used
   };
 
   return (
     <div className="about-page">
       {/* Introduction Section */}
       <section className="about-section">
-        <h2>{t('about.navTitle')}</h2>
-        <p className="introduction-text">{t(introTextKey)}</p>
+        <h2>Localized text for 'about.navTitle'</h2>
+        <p className="introduction-text">Localized text for 'about.introduction'</p>
       </section>
 
       {/* Skills Section */}
       <section className="about-section">
-        <h2>{t('about.skillsTitle')}</h2>
+        <h2>Localized text for 'about.skillsTitle'</h2>
         <div className="skills-container">
           {skillsData.map(skill => (
             <div key={skill.id} className="skill-item">
-              <h3>{skill.name}</h3> {/* Skill name is not translated as it's a proper noun / tech name */}
+              <h3>{skill.name}</h3>
               <div className="progress-bar-container">
                 <div className="progress-bar-fill" style={{ width: `${skill.level}%` }}>
                   {/* Optional: {skill.level}% */}
                 </div>
               </div>
-              <p className="skill-level-description">{t(skill.levelDescriptionKey)}</p>
+              <p className="skill-level-description">Localized text for '{skill.levelDescriptionKey}'</p>
             </div>
           ))}
         </div>
@@ -64,14 +64,14 @@ const AboutPage = () => {
 
       {/* Education Section */}
       <section className="about-section">
-        <h2>{t('about.educationTitle')}</h2>
+        <h2>Localized text for 'about.educationTitle'</h2>
         <div className="education-container">
           {educationData.map(edu => (
             <div key={edu.id} className="cv-item">
-              <h3>{t(edu.degreeKey)} | {t(edu.institutionKey)}</h3>
+              <h3>Localized text for '{edu.degreeKey}' | Localized text for '{edu.institutionKey}'</h3>
               <p> {edu.period}</p>
               {edu.descriptionKeys && edu.descriptionKeys.length > 0 && (
-                edu.descriptionKeys.map(descKey => <p key={descKey}>{t(descKey)}</p>)
+                edu.descriptionKeys.map(descKey => <p key={descKey}>Localized text for '{descKey}'</p>)
               )}
             </div>
           ))}
@@ -80,14 +80,15 @@ const AboutPage = () => {
 
       {/* Experience Section */}
       <section className="about-section">
-        <h2>{t('about.experienceTitle')}</h2>
+        <h2>Localized text for 'about.experienceTitle'</h2>
         <div className="experience-container">
           {experienceData.map(exp => (
             <div key={exp.id} className="cv-item">
-              <h3>{t(exp.roleKey)}</h3>
-              <p><em>{t(exp.companyKey)}</em> | {exp.period}</p>
+              <h3>Localized text for '{exp.roleKey}'</h3>
+              <p><em>Localized text for '{exp.companyKey}'</em> | {exp.period}</p>
               {exp.responsibilityKeys && exp.responsibilityKeys.length > 0 && (
-                  <p>{exp.responsibilityKeys.map(respKey => {t(respKey)})}</p>
+                  // Joining placeholders, assuming responsibilities would have been a list
+                  <p>{"Localized text for '" + exp.responsibilityKeys.join("', '") + "'"}</p>
               )}
             </div>
           ))}
@@ -96,16 +97,16 @@ const AboutPage = () => {
 
       {/* CV Download Section */}
       <section className="about-section">
-        <h2>{t('about.cvDownloadTitle')}</h2>
+        <h2>Localized text for 'about.cvDownloadTitle'</h2>
         <a 
-          href={cvPaths[language] || cvPaths.en} 
-          download={`cv_arthur_wuhrlin_${language}.pdf`} 
+          href={cvPaths.en} // Default to English CV
+          download="cv_arthur_wuhrlin_en.pdf" // Default to English CV name
           target="_blank" 
           rel="noopener noreferrer" 
-          className="cv-download-button"
+          className="cv-download-button with-border" // Added with-border for styling like a button
         >
-          {t('about.cvDownloadButton')}
-        </button>
+          Localized text for 'about.cvDownloadButton'
+        </a> {/* Changed button to a for correct download behavior */}
       </section>
     </div>
   );
