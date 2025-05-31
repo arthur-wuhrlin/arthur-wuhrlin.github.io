@@ -307,6 +307,29 @@ ul li a {
   margin-bottom: 30px;
 }
 
+.about-page .introduction-text ul {
+  list-style-type: disc;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+
+.about-page .introduction-text ul li {
+  height: auto; /* Override global li style */
+  padding: 0 0 5px 0; /* Override global li style, add bottom padding for spacing */
+  cursor: default; /* Override global li style */
+  background: transparent; /* Explicitly keep transparent, overriding potential global li hover if any */
+  color: inherit; /* Inherit text color */
+  border: none; /* Ensure no border from global li style */
+  margin-bottom: 5px; /* Spacing between list items */
+  /* line-height: 1.6; */ /* Inherited from .about-page li, which is fine */
+}
+
+.about-page .introduction-text ul li:hover {
+  transform: none; /* Override global li hover effect */
+  opacity: 1; /* Override global li hover effect */
+}
+
 /* Skills Section */
 .skills-container {
   display: grid;

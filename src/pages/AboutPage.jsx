@@ -61,18 +61,19 @@ const AboutPage = () => {
       <section className="about-section">
         <h2>About me</h2>
         <div className="introduction-text">
-          <p>Hello! I'm Arthur, a master's computer science student. I'm curious about so many things ranging from arts to hard science, and of course, everything linked to computer science.My motivation is all about understanding deeply new concepts, and it's even better if I can do so with some hand-on projects ! I'm one of those that learn by doing.</p>
+          <p>Hello! I'm Arthur, a <strong>master's computer science student</strong>. I'm curious about so many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>.My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
           <p>Here is a small and non-exhaustive list of what I'm interested in :</p>
-          <p>Hybrid rendering using Raytracing and ML based Denoisers : it was my original Master's thesis project.</p>
-          <p>- How do we do PBR ? : I read some extracts of the well-known PBRT book to get a rough understanding of what is different from real-time techniques.</p>
-          <p>- Procedural generation : I am huge fan of terrain generation using techniques like Perlin or Simplex Noise.</p>
-          <p>- How does the graphics pipeline work ? : I started reading the wonderful 'A trip through the Graphics Pipeline 2011' blog posts from ryg.</p>
-          <p>- How does a basic CPU work ? : I followed a course at Telecom Paris to understand the architecture of the RISC-V, and design a simple cpu.</p>
-          <p>- How do GPUs work ? : I read several articles on that, but need to dig deeper to understand the batch scheduling process, and how memory accesses are handled.</p>
-          <p>- How does a Game Engine work ? : I wrote my own Game Engine in OpenGL and C++ for the GlassOverflow project.</p>
-          <p>- ...</p>
-
-          <p>This list points out that, in computer science, my sweet spot lies on rendering techniques and low-level programming. I'm especially excited whenever it comes to programming using GPUs.</p>
+          <ul>
+            <li><strong>Hybrid rendering</strong> using Raytracing and ML based Denoisers : it was my <em>original Master's thesis project</em>.</li>
+            <li>How do we do <strong>PBR</strong> ? : I read some extracts of the well-known PBRT book to get a rough understanding of what is different from real-time techniques.</li>
+            <li><strong>Procedural generation</strong> : I am huge fan of terrain generation using techniques like <em>Perlin or Simplex Noise</em>.</li>
+            <li>How does the <strong>graphics pipeline</strong> work ? : I started reading the wonderful <em>'A trip through the Graphics Pipeline 2011'</em> blog posts from ryg.</li>
+            <li>How does a basic <strong>CPU</strong> work ? : I followed a course at Telecom Paris to understand the architecture of the <em>RISC-V</em>, and design a simple cpu.</li>
+            <li>How do <strong>GPUs</strong> work ? : I read several articles on that, but need to dig deeper to understand the batch scheduling process, and how memory accesses are handled.</li>
+            <li>How does a <strong>Game Engine</strong> work ? : I wrote my own Game Engine in <em>OpenGL and C++ for the GlassOverflow project</em>.</li>
+            <li>...</li>
+          </ul>
+          <p>This list points out that, in computer science, my sweet spot lies on <strong>rendering techniques</strong> and <strong>low-level programming</strong>. I'm especially excited whenever it comes to <strong>programming using GPUs</strong>.</p>
         </div>
       </section>
 
