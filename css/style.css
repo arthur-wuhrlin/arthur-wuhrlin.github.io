@@ -369,6 +369,33 @@ opacity: 0.95;
   margin-bottom: 5px;
 }
 
+/* Courses List Styling */
+.courses-list ul {
+  list-style-type: none; /* Remove default list styling */
+  padding-left: 0; /* Remove default padding */
+}
+
+.course-item { /* This is an li element */
+  padding: 10px;
+  border: 1px solid var(--theme-border-color);
+  margin-bottom: 10px;
+  background-color: var(--background-color-2); /* Slightly different shade from main background */
+  border-radius: 4px;
+}
+
+.course-item a {
+  display: inline-block; /* Allows for better spacing */
+  font-weight: bold; /* Make course name stand out */
+  color: var(--link-color); /* Ensure link color is applied */
+}
+
+.course-item .course-desc {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: var(--theme-muted-color);
+}
+
 /* CV Download Button */
 .with-border {
   border: 1px solid var(--theme-text-color, #444);
