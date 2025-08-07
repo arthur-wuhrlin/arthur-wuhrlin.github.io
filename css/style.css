@@ -163,7 +163,6 @@ body.dark {
   --background-color: rgb(30, 30, 30);
   --background-color-2: rgb(35, 35, 35); /* Slightly lighter background for elements */
   --foreground-color: white; /* General foreground, often same as opposed in simple themes */
-  --link-color: #64b5f6; /* Light blue for links */
   --theme-text-color: white; /* Explicit main text color */
 
   --theme-accent-color: #0d6efd; 
@@ -179,7 +178,6 @@ body.light {
   --background-color: white;
   --background-color-2: rgb(250, 250, 250); /* Slightly darker background for elements */
   --foreground-color: rgb(30, 30, 30); /* General foreground */
-  --link-color: #007bff; /* Standard blue for links */
   --theme-text-color: rgb(30, 30, 30); /* Explicit main text color */
 
   --theme-accent-color: #007bff;
@@ -455,4 +453,40 @@ p.institution {
 
 .align-left {
   text-align: left;
+}
+
+/* Blog Page Specific Styles */
+.blog-post-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blog-post-page h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.blog-post-page .post-date {
+  font-size: 1em;
+  color: var(--theme-muted-color);
+  margin-bottom: 20px;
+}
+
+.blog-post-page p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.blog-post-page a {
+  color: var(--theme-accent-color);
+  text-decoration: underline;
+}
+
+.blog-post-page ul, .blog-post-page ol {
+  padding-left: 20px;
+}
+
+.blog-post-page li {
+  margin-bottom: 10px;
 }
