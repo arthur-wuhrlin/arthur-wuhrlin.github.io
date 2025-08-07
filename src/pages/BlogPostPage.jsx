@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import posts from '../posts';
+import styles from '../styles/components/BlogPage.module.css';
 
 const BlogPostPage = () => {
   const { postId } = useParams();
@@ -24,9 +25,9 @@ const BlogPostPage = () => {
   }
 
   return (
-    <div className="blog-post-page">
+    <div className={`container ${styles.blogPostPage}`}>
       <h1>{post.title}</h1>
-      <p className="post-date">{post.date}</p>
+      <p className={styles.postDate}>{post.date}</p>
       <ReactMarkdown>{content}</ReactMarkdown>
     </div>
   );

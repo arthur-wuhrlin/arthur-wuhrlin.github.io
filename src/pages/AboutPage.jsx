@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-// useLanguage import removed
+import styles from '../styles/components/AboutPage.module.css';
 
 const AboutPage = () => {
-  // useLanguage() call removed
   const [openCourses, setOpenCourses] = useState({});
-
-  // Placeholder Data (original structure maintained for now)
-  const introTextKey = 'about.introduction';
 
   const skillLevel = {
     beginner: "beginner",
@@ -30,10 +26,10 @@ const AboutPage = () => {
   ];
 
   const educationData = [
-    { id: 'edu3', 
-      degreeKey: 'Master of Science in Software Engineering', 
-      institutionKey: 'National University of Singapore', 
-      period: '2024 - 2025', 
+    { id: 'edu3',
+      degreeKey: 'Master of Science in Software Engineering',
+      institutionKey: 'National University of Singapore',
+      period: '2024 - 2025',
       courses: [
         {courseName : "CS4350: Game Development Project", link: "https://nusmods.com/courses/CS4350/game-development-project", desc: "Group project based course aiming at building a game."},
         {courseName : "CS5242: Neural Networks and Deep Learning", link: "https://nusmods.com/courses/CS5242/neural-networks-and-deep-learning", desc: "This course teaches the knowledge about practical Deep Learning networks through multiple assignments (CNN, VAE, VQ-VAE, FlashAttention implementation) and a final project."},
@@ -42,13 +38,13 @@ const AboutPage = () => {
         {courseName : "CS6101: Exploration of Computer Science Research", link: "https://nusmods.com/courses/CS6101/exploration-of-computer-science-research", desc: "Course aiming at showing different research area in computer science research. I worked with a research group working on improving current systems (GPU clusters, CUDA kernels, existing libraries like PyTorch) to enable faster AI model training and inference."},
       ]
     },
-    { id: 'edu2', 
-      degreeKey: 'Engineering Diploma in Computer Science', 
-      institutionKey: 'Telecom Paris', 
-      period: '2022 - 2025', 
+    { id: 'edu2',
+      degreeKey: 'Engineering Diploma in Computer Science',
+      institutionKey: 'Telecom Paris',
+      period: '2022 - 2025',
       courses: [
         {courseName : "SE201: Execution platforms", link: "https://synapses.telecom-paris.fr/catalogue/2023-2024/ue/2064/SE201-support-d-execution-execution-platforms?from=D4", desc: "In this course, I learnt about how the RISC-V CPU works. The course is a journey that first builds a basic execution platform for a subset of the RISC-V processor instruction set, and gradually adds new components to enhance the capabilities, either it is instruction execution speed, preventing stalling, protecting memory access, ..."},
-      ] 
+      ]
     },
     { id: 'edu1', degreeKey: 'Preparatory Classes MPSI/MP*', institutionKey: 'Lycée Kléber, Strasbourg"', period: '2020 - 2022', descriptionKeys: [] },
   ];
@@ -63,11 +59,11 @@ const AboutPage = () => {
   };
 
   return (
-    <div className="about-page">
+    <div className={`container ${styles.aboutPage}`}>
       {/* Introduction Section */}
-      <section className="about-section">
+      <section>
         <h2>About me</h2>
-        <div className="introduction-text text-div">
+        <div className={styles.introductionText}>
           <p>Hello! I'm Arthur, a <strong>master's computer science student</strong>. I'm curious about many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>. My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
           <p>Here is a small and non-exhaustive list of what I'm interested in :</p>
           <ul>
@@ -85,32 +81,32 @@ const AboutPage = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="about-section">
+      <section>
         <h2>Skills</h2>
-        <div className="skills-container">
+        <div className={styles.skillsContainer}>
           {skillsData.map(skill => (
-            <div key={skill.id} className="skill-item">
+            <div key={skill.id} className={styles.skillItem}>
               <h3>{skill.name}</h3>
-              <div className="progress-bar-container">
-                <div className="progress-bar-fill" style={{ width: `${skill.level}%` }}>
+              <div className={styles.progressBarContainer}>
+                <div className={styles.progressBarFill} style={{ width: `${skill.level}%` }}>
                 </div>
               </div>
-              <p className="skill-level-description">{skill.levelDescriptionKey}</p>
+              <p className={styles.skillLevelDescription}>{skill.levelDescriptionKey}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Education Section */}
-      <section className="about-section">
+      <section>
         <h2>Education</h2>
-        <div className="education-container">
+        <div>
           {educationData.map(edu => (
-            <div key={edu.id} className="cv-item">
-              <div className="cv-item-header">
+            <div key={edu.id} className={styles.cvItem}>
+              <div className={styles.cvItemHeader}>
                 <div className="cv-item-main-info">
                   <h3>{edu.degreeKey}</h3>
-                  <p className="institution">{edu.institutionKey}</p>
+                  <p className={styles.institution}>{edu.institutionKey}</p>
                 </div>
                 <div className="cv-item-period">
                   <p>{edu.period}</p>
@@ -123,7 +119,7 @@ const AboutPage = () => {
                   onClick={() => {
                     setOpenCourses(prev => ({ ...prev, [edu.id]: !prev[edu.id] }));
                   }}
-                  className="toggle-courses-btn with-border"
+                  className={`button ${styles.toggleCoursesBtn}`}
                   style={{ marginBottom: '10px', padding: '5px 10px', fontSize: '0.9em' }}
                 >
                   {openCourses[edu.id] ? 'Hide Courses' : 'Show Courses'}
@@ -132,14 +128,14 @@ const AboutPage = () => {
 
               {/* Conditionally Rendered Course List */}
               {openCourses[edu.id] && edu.courses && edu.courses.length > 0 && (
-                <div className="courses-list">
+                <div className={styles.coursesList}>
                   <ul>
                     {edu.courses.map(course => (
-                      <li key={course.courseName} className="course-item">
+                      <li key={course.courseName} className={styles.courseItem}>
                         <a href={course.link} target="_blank" rel="noopener noreferrer">
                           {course.courseName}
                         </a>
-                        <p className="course-desc">{course.desc}</p>
+                        <p className={styles.courseDesc}>{course.desc}</p>
                       </li>
                     ))}
                   </ul>
@@ -153,11 +149,11 @@ const AboutPage = () => {
           ))}
         </div>
       </section>
-      <section className="about-section">
+      <section>
         <h2>Experience</h2>
-        <div className="experience-container">
+        <div>
           {experienceData.map(exp => (
-            <div key={exp.id} className="cv-item">
+            <div key={exp.id} className={styles.cvItem}>
               <h3>{exp.roleKey}</h3>
               <p><em>{exp.companyKey}</em> | {exp.period}</p>
               {exp.responsibilityKeys && exp.responsibilityKeys.length > 0 && (
@@ -170,11 +166,17 @@ const AboutPage = () => {
       </section>
 
       {/* CV Download Section */}
-      <section className="about-section">
-        <h2>{t('about.cvDownloadTitle')}</h2>
-        <button href={cvPath} download target="_blank" rel="noopener noreferrer" className="with-border">
-          {t('about.cvDownloadButton')}
-        </button>
+      <section>
+        <h2>Download</h2>
+        <a
+          href={cvPaths['en'] || cvPaths.en}
+          download={`cv_arthur_wuhrlin_en.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button"
+        >
+          Download CV
+        </a>
       </section>
     </div>
   );

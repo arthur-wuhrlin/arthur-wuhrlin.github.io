@@ -1,25 +1,24 @@
 import React from 'react';
-// useLanguage import removed
 import { Link, useLocation } from 'react-router-dom';
+import styles from '../styles/components/NavigationBar.module.css';
 
 const NavigationBar = () => {
-  // useLanguage() call removed
   const location = useLocation();
 
   return (
-    <nav className="horizontal-bar" id="home-bar">
-      <ul className="button-container">
-        <li className={`home ${location.pathname === '/' ? 'active' : ''}`}>
-          <Link to="/">Home</Link> {/* Text updated */}
+    <nav className={styles.navigationBar}>
+      <ul className={styles.buttonContainer}>
+        <li className={`${styles.navItem} ${location.pathname === '/' ? styles.active : ''}`}>
+          <Link to="/" className={styles.navLink}>Home</Link>
         </li>
-        <li className={`projects ${location.pathname === '/projects' ? 'active' : ''}`}>
-          <Link to="/projects">Projects</Link> {/* Text updated */}
+        <li className={`${styles.navItem} ${location.pathname === '/projects' ? styles.active : ''}`}>
+          <Link to="/projects" className={styles.navLink}>Projects</Link>
         </li>
-        <li className={`blog ${location.pathname === '/blog' ? 'active' : ''}`}>
-          <Link to="/blog">Blog</Link> {/* Text updated */}
+        <li className={`${styles.navItem} ${location.pathname === '/blog' ? styles.active : ''}`}>
+          <Link to="/blog" className={styles.navLink}>Blog</Link>
         </li>
-        <li className={`about ${location.pathname === '/about' ? 'active' : ''}`}>
-          <Link to="/about">About</Link> {/* Text updated */}
+        <li className={`${styles.navItem} ${location.pathname === '/about' ? styles.active : ''}`}>
+          <Link to="/about" className={styles.navLink}>About</Link>
         </li>
       </ul>
     </nav>

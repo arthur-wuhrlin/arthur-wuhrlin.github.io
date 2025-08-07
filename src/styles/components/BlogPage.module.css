@@ -1,0 +1,36 @@
+/* BlogPage component styles */
+
+.blogPostPage {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.blogPostPage h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.postDate {
+  font-size: 1em;
+  color: var(--theme-muted-color);
+  margin-bottom: 20px;
+}
+
+.blogPostPage p {
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.blogPostPage a {
+  color: var(--theme-accent-color);
+  text-decoration: underline;
+}
+
+.blogPostPage ul, .blogPostPage ol {
+  padding-left: 20px;
+}
+
+.blogPostPage li {
+  margin-bottom: 10px;
+}

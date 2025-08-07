@@ -1,0 +1,46 @@
+/* FooterBar component styles */
+
+.footerBar {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.iconLink {
+  display: inline-block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.iconLink:hover .icon {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
