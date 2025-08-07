@@ -8,6 +8,7 @@ import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
 import BlogPage from './pages/BlogPage';
 import AboutPage from './pages/AboutPage';
+import BlogPostPage from './pages/BlogPostPage';
 
 // Define RoutedAppContent component
 function RoutedAppContent() {
@@ -18,6 +19,7 @@ function RoutedAppContent() {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:postId" element={<BlogPostPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Layout>

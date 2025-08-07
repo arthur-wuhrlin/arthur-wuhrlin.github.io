@@ -1,12 +1,18 @@
 import React from 'react';
-// useLanguage import removed
+import ItemsGrid from '../components/ItemsGrid';
+import posts from '../posts';
 
 const BlogPage = () => {
-  // useLanguage() call removed
+  const blogItems = posts.map(post => ({
+    title: post.title,
+    link: `/blog/${post.id}`,
+    descriptionParas: [post.brief],
+  }));
 
   return (
     <div>
-      <h2 className="text">Blog - Work in Progress</h2> {/* Text updated */}
+      <h2 className="text">Blog</h2>
+      <ItemsGrid items={blogItems} />
     </div>
   );
 };
