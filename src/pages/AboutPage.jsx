@@ -42,7 +42,14 @@ const AboutPage = () => {
         {courseName : "CS6101: Exploration of Computer Science Research", link: "https://nusmods.com/courses/CS6101/exploration-of-computer-science-research", desc: "Course aiming at showing different research area in computer science research. I worked with a research group working on improving current systems (GPU clusters, CUDA kernels, existing libraries like PyTorch) to enable faster AI model training and inference."},
       ]
     },
-    { id: 'edu2', degreeKey: 'Engineering Diploma in Computer Science', institutionKey: 'Telecom Paris', period: '2022 - 2025', descriptionKeys: ['about.education.degree2.desc1'] },
+    { id: 'edu2', 
+      degreeKey: 'Engineering Diploma in Computer Science', 
+      institutionKey: 'Telecom Paris', 
+      period: '2022 - 2025', 
+      courses: [
+        {courseName : "SE201: Execution platforms", link: "https://synapses.telecom-paris.fr/catalogue/2023-2024/ue/2064/SE201-support-d-execution-execution-platforms?from=D4", desc: "In this course, I learnt about how the RISC-V CPU works. The course is a journey that first builds a basic execution platform for a subset of the RISC-V processor instruction set, and gradually adds new components to enhance the capabilities, either it is instruction execution speed, preventing stalling, protecting memory access, ..."},
+      ] 
+    },
     { id: 'edu1', degreeKey: 'Preparatory Classes MPSI/MP*', institutionKey: 'Lycée Kléber, Strasbourg"', period: '2020 - 2022', descriptionKeys: [] },
   ];
 
@@ -60,8 +67,8 @@ const AboutPage = () => {
       {/* Introduction Section */}
       <section className="about-section">
         <h2>About me</h2>
-        <div className="introduction-text">
-          <p>Hello! I'm Arthur, a <strong>master's computer science student</strong>. I'm curious about so many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>.My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
+        <div className="introduction-text text-div">
+          <p>Hello! I'm Arthur, a <strong>master's computer science student</strong>. I'm curious about many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>. My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
           <p>Here is a small and non-exhaustive list of what I'm interested in :</p>
           <ul>
             <li><strong>Hybrid rendering</strong> using Raytracing and ML based Denoisers : it was my <em>original Master's thesis project</em>.</li>
@@ -126,7 +133,6 @@ const AboutPage = () => {
               {/* Conditionally Rendered Course List */}
               {openCourses[edu.id] && edu.courses && edu.courses.length > 0 && (
                 <div className="courses-list">
-                  <h4 className='align-left'>Courses:</h4>
                   <ul>
                     {edu.courses.map(course => (
                       <li key={course.courseName} className="course-item">

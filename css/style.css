@@ -14,6 +14,10 @@ body.dark .icon {
   filter: invert(1) hue-rotate(180deg) brightness(0.8);
 }
 
+.text-div {
+  text-align: left;
+}
+
 button, li {
   height: 80%;
   padding: 10px 20px;
@@ -434,8 +438,6 @@ p.institution {
 
 .course-item a {
   display: inline-block; /* Allows for better spacing */
-  font-weight: bold; /* Make course name stand out */
-  color: var(--link-color); /* Ensure link color is applied */
 }
 
 .course-item .course-desc {
