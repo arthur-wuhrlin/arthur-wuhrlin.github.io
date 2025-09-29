@@ -1,15 +1,17 @@
 import React, { useRef } from 'react';
 import useImageHover from '../hooks/useImageHover';
+import styles from '../styles/components/ProjectPage.module.css';
+
 
 const ItemsGrid = ({ items }) => {
   return (
-    <div className="box-container">
+    <div className={`${styles.boxContainer}`}>
       {items.map((item, index) => {
         const imageRef = useRef(null);
         useImageHover(imageRef);
 
         return (
-          <div className="box" key={index}>
+          <div className={`${styles.box}`} key={index}>
             <div className="text-hover-zoom">
               <h2>
                 <a

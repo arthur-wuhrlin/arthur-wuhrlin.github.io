@@ -4,9 +4,10 @@ html, body {
   margin: 0;
   min-height: 100vh;
   font-family: "Montserrat", sans-serif;
+  font-size: small;
   color: var(--foreground-color);
   background: var(--background-color);
-  overflow: hidden;
+  overflow-x: hidden;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -38,7 +39,7 @@ img {
   font-family: "Shadows Into Light", cursive;
   font-weight: 200;
   font-style: normal;
-  font-size: 8vw;
+  font-size: max(8vw, 40px);
   display: inline-block
 }
 
@@ -46,7 +47,13 @@ img {
   font-family: "Shadows Into Light", cursive;
   font-weight: 200;
   font-style: normal;
-  font-size: 5vw;
+  font-size: max(5vw, 25px);
+}
+
+.text-subtitle {
+  font-weight: 200;
+  font-style: normal;
+  font-size: max(1vw, 15px);
 }
 
 #c {
@@ -58,13 +65,22 @@ img {
 }
 
 a {
+  color: var(--theme-text-color);
   text-decoration: none;
-  color: var(--theme-accent-color);
 }
 
-a:hover {
-  color: var(--theme-accent-hover-color);
+* {
+  color: var(--theme-opposed-color);
+  font-optical-sizing: auto;
+  /* font-size: 12px; */
 }
+
+h1, h2, h3, h2 a {
+  font-size: min(3vw, 15px);
+  font-weight: normal;
+  margin: 10px 0 20px 0;
+}
+
 
 /* Dark mode variables */
 body.dark {
@@ -102,7 +118,6 @@ body.light {
   height: 100%;
   position: absolute;
   background: transparent;
-  overflow: auto;
   display: flex;
   flex-direction: column;
 }
@@ -117,6 +132,10 @@ body.light {
   padding: 20px;
   max-width: 900px;
   margin: 0 auto;
+}
+
+.center-items {
+  align-content: center;
 }
 
 .button {

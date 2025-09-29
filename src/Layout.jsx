@@ -9,7 +9,7 @@ const Layout = ({ children, location }) => { // Destructure location here
     <>
       <div className="container-col">
         <NavigationBar />
-        <div className="content"> {/* Regular div */}
+        <div className="content center-items"> {/* Regular div */}
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname} // This key is crucial
