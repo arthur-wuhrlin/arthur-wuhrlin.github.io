@@ -11,10 +11,6 @@ html, body {
   transition: background 0.3s, color 0.3s;
 }
 
-body.dark .icon {
-  filter: invert(1) hue-rotate(180deg) brightness(0.8);
-}
-
 .text-div {
   text-align: left;
 }
@@ -65,14 +61,8 @@ img {
 }
 
 a {
-  color: var(--theme-text-color);
+  color: var(--theme-accent-color);
   text-decoration: none;
-}
-
-* {
-  color: var(--theme-opposed-color);
-  font-optical-sizing: auto;
-  /* font-size: 12px; */
 }
 
 h1, h2, h3, h2 a {
@@ -90,8 +80,7 @@ body.dark {
   --foreground-color: white; /* General foreground, often same as opposed in simple themes */
   --theme-text-color: white; /* Explicit main text color */
 
-  --theme-accent-color: #0d6efd;
-  --theme-accent-hover-color: #0b5ed7;
+  --theme-accent-color: #a3c8ff;
   --theme-secondary-bg-color: #2c3034;
   --theme-border-color: #495057;
   --theme-muted-color: #adb5bd;
@@ -106,7 +95,6 @@ body.light {
   --theme-text-color: rgb(30, 30, 30); /* Explicit main text color */
 
   --theme-accent-color: #007bff;
-  --theme-accent-hover-color: #0056b3;
   --theme-secondary-bg-color: #f8f9fa;
   --theme-border-color: #dee2e6;
   --theme-muted-color: #6c757d;

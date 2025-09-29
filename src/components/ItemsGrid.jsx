@@ -1,9 +1,8 @@
 import React, { useRef } from 'react';
 import useImageHover from '../hooks/useImageHover';
-import styles from '../styles/components/ProjectPage.module.css';
 
 
-const ItemsGrid = ({ items }) => {
+const ItemsGrid = ({ items, styles }) => {
   return (
     <div className={`${styles.boxContainer}`}>
       {items.map((item, index) => {

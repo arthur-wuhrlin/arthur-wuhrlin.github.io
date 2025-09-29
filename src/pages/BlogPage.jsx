@@ -1,7 +1,8 @@
 import React from 'react';
 import ItemsGrid from '../components/ItemsGrid';
 import posts from '../posts';
-import styles from '../styles/components/BlogPage.module.css';
+import defaultStyles from '../styles/components/DefaultStyles.module.css';
+
 
 const BlogPage = () => {
   const blogItems = posts.map(post => ({
@@ -12,8 +13,7 @@ const BlogPage = () => {
 
   return (
     <div className="container">
-      <h2 className="text-title">Blog</h2>
-      <ItemsGrid items={blogItems} />
+      <ItemsGrid items={blogItems} styles={defaultStyles} />
     </div>
   );
 };

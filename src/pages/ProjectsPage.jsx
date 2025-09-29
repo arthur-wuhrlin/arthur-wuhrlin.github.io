@@ -1,5 +1,7 @@
 import React from 'react';
 import ItemsGrid from '../components/ItemsGrid';
+import boxStyles from '../styles/components/BoxStyles.module.css';
+
 
 const ProjectsPage = () => {
   const projectsData = [
@@ -56,7 +58,7 @@ const ProjectsPage = () => {
     }     
   ];
 
-  return <ItemsGrid items={projectsData} />;
+  return <ItemsGrid items={projectsData} styles={boxStyles} />;
 };
 
 export default ProjectsPage;
