@@ -81,7 +81,6 @@ body.dark {
   --theme-text-color: white; /* Explicit main text color */
 
   --theme-accent-color: #a3c8ff;
-  --theme-secondary-bg-color: #2c3034;
   --theme-border-color: #495057;
   --theme-muted-color: #adb5bd;
   --theme-button-text-color: #ffffff;
@@ -90,12 +89,11 @@ body.dark {
 body.light {
   --theme-opposed-color: black; /* Main text color in light mode */
   --background-color: white;
-  --background-color-2: rgb(250, 250, 250); /* Slightly darker background for elements */
+  --background-color-2: #e6e6e6; /* Slightly darker background for elements */
   --foreground-color: rgb(30, 30, 30); /* General foreground */
   --theme-text-color: rgb(30, 30, 30); /* Explicit main text color */
 
-  --theme-accent-color: #007bff;
-  --theme-secondary-bg-color: #f8f9fa;
+  --theme-accent-color: #679cea;
   --theme-border-color: #dee2e6;
   --theme-muted-color: #6c757d;
   --theme-button-text-color: #ffffff;

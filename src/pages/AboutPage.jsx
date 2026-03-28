@@ -11,52 +11,55 @@ const AboutPage = () => {
     expert: "expert"
   };
 
-  const skillsData = [
-    { id: 'skill1', name: 'C++', level: 80, levelDescriptionKey: skillLevel.advanced },
-    { id: 'skill2', name: 'Vulkan', level: 70, levelDescriptionKey: skillLevel.advanced },
-    { id: 'skill3', name: 'OpenGL', level: 80, levelDescriptionKey: skillLevel.advanced },
-    { id: 'skill4', name: 'C#', level: 75, levelDescriptionKey: skillLevel.advanced },
-    { id: 'skill5', name: 'Unity', level: 85, levelDescriptionKey: skillLevel.advanced },
-    { id: 'skill6', name: 'Python', level: 80, levelDescriptionKey: skillLevel.advanced },
-    { id: 'skill7', name: 'C', level: 65, levelDescriptionKey: skillLevel.intermediate },
-    { id: 'skill8', name: 'Java', level: 60, levelDescriptionKey: skillLevel.intermediate },
-    { id: 'skill9', name: 'React', level: 35, levelDescriptionKey: skillLevel.beginner },
-    { id: 'skill10', name: 'CSS', level: 35, levelDescriptionKey: skillLevel.beginner },
-    { id: 'skill11', name: 'bash', level: 35, levelDescriptionKey: skillLevel.beginner },
-  ];
-
   const educationData = [
-    { id: 'edu3',
+    { 
+      id: 'edu3',
       degreeKey: 'Master of Science in Software Engineering',
       institutionKey: 'National University of Singapore',
       period: '2024 - 2025',
-      courses: [
-        {courseName : "CS4350: Game Development Project", link: "https://nusmods.com/courses/CS4350/game-development-project", desc: "Group project based course aiming at building a game."},
-        {courseName : "CS5242: Neural Networks and Deep Learning", link: "https://nusmods.com/courses/CS5242/neural-networks-and-deep-learning", desc: "This course teaches the knowledge about practical Deep Learning networks through multiple assignments (CNN, VAE, VQ-VAE, FlashAttention implementation) and a final project."},
-        {courseName : "CS5477: 3D Computer Vision", link: "https://nusmods.com/courses/CS5477/3-d-computer-vision", desc: "This heavily math-based course teaches everything needed for computer vision. From projective geometry to essential algorithms like RANSSAC, including modern techniques for view synthesis like NeRF and 3D Gaussian Splatting."},
-        {courseName : "CS6240: Multimedia analysis", link: "https://nusmods.com/courses/CS6240/multimedia-analysis", desc: "PhD course aiming at showing current state of the art on MLLMs and their uses. Discussions included hallucination, measuring model performance, multimedia knowledge extraction,..."},
-        {courseName : "CS6101: Exploration of Computer Science Research", link: "https://nusmods.com/courses/CS6101/exploration-of-computer-science-research", desc: "Course aiming at showing different research area in computer science research. I worked with a research group working on improving current systems (GPU clusters, CUDA kernels, existing libraries like PyTorch) to enable faster AI model training and inference."},
-      ]
+      courses: []
     },
-    { id: 'edu2',
+    { 
+      id: 'edu2',
       degreeKey: 'Engineering Diploma in Computer Science',
       institutionKey: 'Telecom Paris',
       period: '2022 - 2025',
-      courses: [
-        {courseName : "SE201: Execution platforms", link: "https://synapses.telecom-paris.fr/catalogue/2023-2024/ue/2064/SE201-support-d-execution-execution-platforms?from=D4", desc: "In this course, I learnt about how the RISC-V CPU works. The course is a journey that first builds a basic execution platform for a subset of the RISC-V processor instruction set, and gradually adds new components to enhance the capabilities, either it is instruction execution speed, preventing stalling, protecting memory access, ..."},
-      ]
+      courses: []
     },
-    { id: 'edu1', degreeKey: 'Preparatory Classes MPSI/MP*', institutionKey: 'Lycée Kléber, Strasbourg"', period: '2020 - 2022', descriptionKeys: [] },
+    { 
+      id: 'edu1', 
+      degreeKey: 'Preparatory Classes MPSI/MP*', 
+      institutionKey: '', 
+      period: '2020 - 2022', 
+      descriptionKeys: [] 
+    },
   ];
 
   const experienceData = [
-    { id: 'exp1', roleKey: 'about.experience.role1.name', companyKey: 'about.experience.role1.company', period: 'Summer 2023', responsibilityKeys: ['about.experience.role1.resp1', 'about.experience.role1.resp2'] },
+    {
+      id: 'exp2', 
+      roleKey: 'GPU DevTech', 
+      companyKey: 'Advanced Micro Devices', 
+      period: 'Jan 2026 - Present', 
+      responsibilityKeys: 
+      [
+        'Profiling and optimization of AAA games on AMD GPUs.',
+        'Investigation of problems related to Radeon Drivers, Radeon GPUs or AMD SDKs and their integration.',
+      ] 
+    },
+    { 
+      id: 'exp1', 
+      roleKey: 'Research Assistant', 
+      companyKey: 'National University of Singapore', 
+      period: 'Jan 2025 - 6 months', 
+      responsibilityKeys: 
+      [
+        'Development of FRAGS, a real-time 3D Gaussian Splatting streaming framework.',
+        'Uses up to 76.5% less VRAM in comparison to SOTA methods.',
+        'Bandwidth equivalent to 1080p, 30fps image streaming (AV1 or H.265 codecs).'
+      ] 
+    },
   ];
-
-  const cvPaths = {
-    en: '/pdf/cv_arthur_wuhrlin_en.pdf',
-    fr: '/pdf/cv_arthur_wuhrlin_fr.pdf'
-  };
 
   return (
     <div className={`container ${styles.aboutPage}`}>
@@ -64,24 +67,20 @@ const AboutPage = () => {
       <section>
         <h2>About me</h2>
         <div className={styles.introductionText}>
-          <p>Hello! I'm Arthur, a <strong>master's computer science student</strong>. I'm curious about many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>. My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
-          <p>Here is a small and non-exhaustive list of what I'm interested in :</p>
+          <p>Hello! I'm Arthur, a <strong>software engineer</strong>. I'm curious about many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>. My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
+          <p>Here is a small and non-exhaustive list of what I'd like to explore further :</p>
           <ul>
-            <li><strong>Hybrid rendering</strong> using Raytracing and ML based Denoisers : it was my <em>original Master's thesis project</em>.</li>
-            <li>How do we do <strong>PBR</strong> ? : I read some extracts of the well-known PBRT book to get a rough understanding of what is different from real-time techniques.</li>
-            <li><strong>Procedural generation</strong> : I am huge fan of terrain generation using techniques like <em>Perlin or Simplex Noise</em>.</li>
-            <li>How does the <strong>graphics pipeline</strong> work ? : I started reading the wonderful <em>'A trip through the Graphics Pipeline 2011'</em> blog posts from ryg.</li>
-            <li>How does a basic <strong>CPU</strong> work ? : I followed a course at Telecom Paris to understand the architecture of the <em>RISC-V</em>, and design a simple cpu.</li>
-            <li>How do <strong>GPUs</strong> work ? : I read several articles on that, but need to dig deeper to understand the batch scheduling process, and how memory accesses are handled.</li>
-            <li>How does a <strong>Game Engine</strong> work ? : I wrote my own Game Engine in <em>OpenGL and C++ for the GlassOverflow project</em>.</li>
-            <li>...</li>
+            <li><strong>Hybrid rendering</strong> using Raytracing and ML based Denoisers.</li>
+            <li>How do we do <strong>PBR</strong> ?</li>
+            <li>Generate interesting terrains with <strong>Procedural generation</strong> in an optimized way.</li>
+            <li>Generate decent looking <strong>water in real-time</strong>. I already dealt with decent water mesh generation, but not with the rendering!</li>
           </ul>
-          <p>This list points out that, in computer science, my sweet spot lies on <strong>rendering techniques</strong> and <strong>low-level programming</strong>. I'm especially excited whenever it comes to <strong>programming using GPUs</strong>.</p>
+          <p>At the moment, I'm exploring how the Graphics pipeline is implemented on modern GPUs, and learning more about DX12 and DXR.</p>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section>
+      {/* <section>
         <h2>Skills</h2>
         <div className={styles.skillsContainer}>
           {skillsData.map(skill => (
@@ -92,6 +91,35 @@ const AboutPage = () => {
                 </div>
               </div>
               <p className={styles.skillLevelDescription}>{skill.levelDescriptionKey}</p>
+            </div>
+          ))}
+        </div>
+      </section> */}
+
+      {/* Experience Section */}
+      <section>
+        <h2>Experience</h2>
+        <div>
+          {experienceData.map(exp => (
+            <div key={exp.id} className={styles.cvItem}>
+              <div className={styles.cvItemHeader}>
+                <div className="cv-item-main-info">
+                  <h3>{exp.roleKey}</h3>
+                  <p className={styles.institution}>{exp.companyKey}</p>
+                </div>
+                <div className="cv-item-period">
+                  <p>{exp.period}</p>
+                </div>
+              </div>
+              
+              {exp.responsibilityKeys && exp.responsibilityKeys.length > 0 && (
+                  // Joining placeholders, assuming responsibilities would have been a list
+                  <ul>
+                    {exp.responsibilityKeys.map(resp => (
+                      <li>{resp}</li>
+                    ))}
+                  </ul>
+              )}
             </div>
           ))}
         </div>
@@ -148,35 +176,6 @@ const AboutPage = () => {
             </div>
           ))}
         </div>
-      </section>
-      <section>
-        <h2>Experience</h2>
-        <div>
-          {experienceData.map(exp => (
-            <div key={exp.id} className={styles.cvItem}>
-              <h3>{exp.roleKey}</h3>
-              <p><em>{exp.companyKey}</em> | {exp.period}</p>
-              {exp.responsibilityKeys && exp.responsibilityKeys.length > 0 && (
-                  // Joining placeholders, assuming responsibilities would have been a list
-                  <p>{"Localized text for '" + exp.responsibilityKeys.join("', '") + "'"}</p>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CV Download Section */}
-      <section>
-        <h2>Download</h2>
-        <a
-          href={cvPaths['en'] || cvPaths.en}
-          download={`cv_arthur_wuhrlin_en.pdf`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="button"
-        >
-          Download CV
-        </a>
       </section>
     </div>
   );

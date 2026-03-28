@@ -9,19 +9,19 @@ const FooterBar = () => {
     <div className={styles.footerBar}>
       <div className={styles.socialIcons}>
         <a href="https://www.linkedin.com/in/arthur-wuhrlin" target="_blank" className={styles.iconLink}>
-          <img src="/img/linkedin_logo.svg" alt="LinkedIn" className={styles.icon} />
+          <img src="/img/linkedin_logo.svg" alt="LinkedIn" className={`${styles.icon} ${theme === 'dark' ? styles.inverted : ''}`} />
         </a>
-        <a href="https://github.com/JudasBricot" target="_blank" className={styles.iconLink}>
-          <img src="/img/github_logo.svg" alt="GitHub" className={styles.icon} />
+        <a href="https://github.com/arthur-wuhrlin" target="_blank" className={styles.iconLink}>
+          <img src="/img/github_logo.svg" alt="GitHub" className={`${styles.icon} ${theme === 'dark' ? styles.inverted : ''}`} />
         </a>
         <a href="mailto:arthur.wuhrlin@nus.edu.sg" target="_blank" id="email" className={styles.iconLink}>
-          <img src="/img/email_logo.svg" alt="Mail" className={styles.icon} />
+          <img src="/img/email_logo.svg" alt="Mail" className={`${styles.icon} ${theme === 'dark' ? styles.inverted : ''}`} />
         </a>
       </div>
       <div className={styles.controls}>
-        <button className="button" onClick={toggleTheme}>
-          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-        </button>
+        <a className={styles.iconLink}>
+          <img onClick={toggleTheme} className={`${styles.icon} ${theme === 'dark' ? styles.inverted : ''}`} src={theme === 'light' ? "/img/dark_mode_toggle_logo.svg" : "/img/light_mode_toggle_logo.svg"} alt={theme === 'light' ? "Switch to Dark Mode" : "Switch to Light Mode"} />
+        </a>
       </div>
     </div>
   );

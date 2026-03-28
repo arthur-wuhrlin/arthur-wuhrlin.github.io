@@ -57,7 +57,7 @@
 }
 
 .skillItem {
-  background-color: var(--theme-secondary-bg-color, #f9f9f9);
+  background-color: var(--theme-background-color-2, #f9f9f9);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -95,7 +95,7 @@
 
 /* CV Sections (Education & Experience) */
 .cvItem {
-  background-color: var(--theme-secondary-bg-color);
+  background-color: var(--background-color-2);
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;

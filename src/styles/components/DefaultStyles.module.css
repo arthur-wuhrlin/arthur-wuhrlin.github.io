@@ -1,0 +1,16 @@
+.boxContainer {
+  overflow: hidden;
+  border-radius: 1rem;
+
+  padding-block: 2rem;
+  width: min(95%, 70rem);
+  margin-inline: auto;
+}
+
+.box {
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
