@@ -7,8 +7,20 @@
 }
 
 .blogPostPage h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   margin-bottom: 10px;
+}
+
+.blogPostPage h2 {
+  font-size: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+.blogPostPage h3 {
+  font-size: 1.2em;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
 }
 
 .postDate {
@@ -25,6 +37,17 @@
 .blogPostPage a {
   color: var(--theme-accent-color);
   text-decoration: underline;
+}
+
+.blogPostPage pre {
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+
+.blogPostPage code {
+  font-family: Consolas, Monaco, monospace;
+  font-size: 0.95em;
 }
 
 .blogPostPage ul, .blogPostPage ol {

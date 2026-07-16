@@ -1,12 +1,12 @@
 const posts = [
   {
-    id: 'first-post',
-    title: 'My First Blog Post',
-    date: '2024-01-01',
-    brief: 'This is my first blog post. I am writing it in markdown.',
-    tags: ['first', 'test'],
+    id: 'implementing-a-software-rasterizer-01',
+    title: 'Implementing a Software Rasterizer 01',
+    date: '2026-07-17',
+    brief: 'Foundations, naive rasterizer and data oriented pipeline.',
+    tags: ['rasterization', 'CPU', 'optimization'],
     languages: [],
-    file: 'first-post.md',
+    file: 'implementing-a-software-rasterizer-01.md',
   },
   {
     id: 'second-post',
