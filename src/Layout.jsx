@@ -5,6 +5,8 @@ import FooterBar from './components/FooterBar';
 import ThreeCanvas from './components/ThreeCanvas';
 
 const Layout = ({ children, location }) => { // Destructure location here
+  const isHomePage = location.pathname === '/';
+
   return (
     <>
       <div className="container-col">
@@ -24,7 +26,7 @@ const Layout = ({ children, location }) => { // Destructure location here
         </div>
         <FooterBar />
       </div>
-      <ThreeCanvas />
+      {isHomePage && <ThreeCanvas />}
     </>
   );
 };

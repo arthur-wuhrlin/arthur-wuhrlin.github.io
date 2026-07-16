@@ -1,30 +1,42 @@
 .boxContainer {
-  display: grid;
-  gap: 1.5rem;
-  row-gap: 4.5rem;;
-
+  column-count: 1;
+  column-gap: 1.5rem;
   overflow: hidden;
   border-radius: 1rem;
-
   padding-block: 2rem;
-  width: min(95%, 70rem);
+  width: min(95%, 80rem);
   margin-inline: auto;
 }
 
 .box {
   padding: 2rem;
+  margin: 0 0 1.5rem;
   border-radius: 0.2rem;
-  background-color: var(--background-color-2);
-
+  background-color: transparent;
+  border: 1px solid var(--theme-text-color, #444);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   opacity: 0.95;
+  break-inside: avoid;
+  box-sizing: border-box;
 }
+
 @media (min-width: 50em) {
   .boxContainer {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
+  }
+}
+
+@media (min-width: 150em) {
+  .boxContainer {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 200em) {
+  .boxContainer {
+    column-count: 4;
   }
 }

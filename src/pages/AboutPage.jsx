@@ -67,15 +67,14 @@ const AboutPage = () => {
       <section>
         <h2>About me</h2>
         <div className={styles.introductionText}>
-          <p>Hello! I'm Arthur, a <strong>software engineer</strong>. I'm curious about many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>. My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
-          <p>Here is a small and non-exhaustive list of what I'd like to explore further :</p>
+          <p>Hello! I'm Arthur, a <strong>graphics engineer</strong>. I'm curious about many things ranging from <strong>arts to hard science</strong>, and of course, everything linked to <strong>computer science</strong>. My motivation is all about <strong>understanding deeply new concepts</strong>, and it's even better if I can do so with some <em>hand-on projects</em> ! I'm one of those that <em>learn by doing</em>.</p>
+          <p>Here is a small and non-exhaustive list of what I already explored :</p>
           <ul>
-            <li><strong>Hybrid rendering</strong> using Raytracing and ML based Denoisers.</li>
-            <li>How do we do <strong>PBR</strong> ?</li>
-            <li>Generate interesting terrains with <strong>Procedural generation</strong> in an optimized way.</li>
-            <li>Generate decent looking <strong>water in real-time</strong>. I already dealt with decent water mesh generation, but not with the rendering!</li>
-          </ul>
-          <p>At the moment, I'm exploring how the Graphics pipeline is implemented on modern GPUs, and learning more about DX12 and DXR.</p>
+            <li>Generating interesting terrains with <strong>Procedural generation</strong>, using multi-threading andmy own perlin noise implementation.</li>
+            <li>Generating decent looking <strong>water mesh in real-time</strong>. I'd like to dig into the rendering part in the future, and improve my GPU IFFT.</li>
+            <li>Implementing a simple renderer and a Ray Tracing sample using Vulkan.</li>
+          </ul> 
+          <p>At the moment, I'm deep into low-level optimizations on GPUs, learning of how graphics techniques are implemented in the industry and learning the details behind DX12. I'm also working on a software rasterizer in my spare time.</p>
         </div>
       </section>
 

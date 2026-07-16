@@ -5,13 +5,14 @@ export function startBoidSimulation(canvasElement) {
   // let animationFrameId; // This was in the prompt but renderer.setAnimationLoop handles it.
   const scene = new THREE.Scene();
   
-  const frustumSize = 1000;
-  let aspect = window.innerWidth / window.innerHeight;
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+
   const camera = new THREE.OrthographicCamera(
-    frustumSize * aspect / -2,
-    frustumSize * aspect / 2,
-    frustumSize / 2,
-    frustumSize / -2,
+    width / -2,
+    width / 2,
+    height / 2,
+    height / -2,
     0.1, // near
     10   // far
   );
@@ -23,25 +24,27 @@ export function startBoidSimulation(canvasElement) {
     alpha: true
   });
   renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(width, height);
 
   const simulationDimensions = {
-    width: frustumSize * aspect,
-    height: frustumSize
+    width: width,
+    height: height
   };
   const flock = new Flock(scene, 30, simulationDimensions);
 
   function onWindowResize() {
-    aspect = window.innerWidth / window.innerHeight;
-    // Update simulationDimensions if they are used by other parts of the simulation dynamically
-    simulationDimensions.width = frustumSize * aspect;
-    simulationDimensions.height = frustumSize;
-    camera.left = frustumSize * aspect / -2;
-    camera.right = frustumSize * aspect / 2;
-    camera.top = frustumSize / 2;
-    camera.bottom = frustumSize / -2;
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    simulationDimensions.width = width;
+    simulationDimensions.height = height;
+
+    camera.left = width / -2;
+    camera.right = width / 2;
+    camera.top = height / 2;
+    camera.bottom = height / -2;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
   }
   window.addEventListener('resize', onWindowResize);
 

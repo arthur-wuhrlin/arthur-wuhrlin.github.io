@@ -7,7 +7,7 @@ const ProjectsPage = () => {
   const projectsData = [
     {
       title: "Simulating Ocean",
-      link: "https://github.com/JudasBricot/Simple-Game-Engine/tree/fft-ocean",
+      link: "https://github.com/arthur-wuhrlin/Simple-Game-Engine/tree/fft-ocean",
       imageSrc: "/img/project-wvs-thumbnail-400.png",
       descriptionParas: [
         "This project is an implementation and improvement of J. Tessendorf's paper 'Simulating Ocean'. It is built upon a simple 2D OpenGL engine that I implemented following TheCherno tutorials. I added some elements to be able to render in 3D.",
@@ -25,7 +25,7 @@ const ProjectsPage = () => {
     },
     {
       title: "Island Generation and Raycasting",
-      link: "https://github.com/JudasBricot/2D-RayTracing-Island",
+      link: "https://github.com/arthur-wuhrlin/2D-RayTracing-Island",
       imageSrc: "/img/project-isld-thumbnail-400.jpg",
       descriptionParas: [
         "In this project, I used Unity to develop a simple Island generator. The islands are generated using my own implementation of the Perlin noise algorithm, combined with a falloff technique that ensures the border of the map is always water.",
@@ -42,7 +42,7 @@ const ProjectsPage = () => {
     },  
     {
       title: "Marching Cubes Implementation",
-      link: "https://github.com/arthur-wuh/marching-cubes",
+      link: "https://github.com/arthur-wuhrlin/marching-cubes",
       imageSrc: "/img/project_mcb.png",
       descriptionParas: [
         "This is the source code for my TIPE for which I implemented the algorithm of marching cubes in Python. It was developped during my second year in preparatory school back in 2022."
